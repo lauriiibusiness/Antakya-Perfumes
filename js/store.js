@@ -2,20 +2,22 @@
    ANTAKYA PERFUMES — Store, Cart & Account Logic
    ═══════════════════════════════════════════════ */
 
+function fmtPrice(n) { return '€' + n.toFixed(2).replace('.', ','); }
+
 // ── PRODUCT CATALOGUE ──────────────────────────────────────────
 const PRODUCTS = [
-  { id:1,  name:'Rouge Cristal',  inspiredBy:'Baccarat Rouge 540',   notes:'Saffron · Ambergris · Cedar · Jasmine',                price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'unisex', badge:'Bestseller', isNew:false },
-  { id:2,  name:'Oud Noir',       inspiredBy:'Oud Wood',             notes:'Oud · Rosewood · Vetiver · Sandalwood',                price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:null,         isNew:false },
-  { id:3,  name:'Soir Noir',      inspiredBy:'Black Orchid',         notes:'Black Orchid · Truffle · Dark Chocolate · Patchouli',  price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'unisex', badge:'New',        isNew:true  },
-  { id:4,  name:'Nuit Doré',      inspiredBy:"La Nuit de L'Homme",  notes:'Cardamom · Lavender · Cedarwood · Vetiver',            price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:null,         isNew:false },
-  { id:5,  name:'Belle Minuit',   inspiredBy:'Good Girl',            notes:'Jasmine · Tuberose · Tonka Bean · Cocoa',              price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'women',  badge:null,         isNew:false },
-  { id:6,  name:'Empire',         inspiredBy:'Creed Aventus',        notes:'Pineapple · Bergamot · Oakmoss · Birch · Musk',        price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:'Limited',    isNew:false },
-  { id:7,  name:'Rose Noire',     inspiredBy:'La Vie Est Belle',     notes:'Rose · Iris · Praline · Patchouli',                   price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'women',  badge:'New',        isNew:true  },
-  { id:8,  name:'Velvet Amber',   inspiredBy:'1 Million',            notes:'Blood Orange · Cinnamon · Leather · Amber',           price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:'New',        isNew:true  },
-  { id:9,  name:'Fleur Noir',     inspiredBy:'Coco Mademoiselle',    notes:'Orange · Rose · Patchouli · Vetiver',                 price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'women',  badge:null,         isNew:false },
-  { id:10, name:'Velours Blanc',  inspiredBy:'Molecule 01',          notes:'Iso E Super · Musk · Cedarwood · Amber',              price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'unisex', badge:null,         isNew:true  },
-  { id:11, name:'Or Noir',        inspiredBy:'Sauvage Parfum',       notes:'Bergamot · Sichuan Pepper · Ambroxan · Sandalwood',   price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:null,         isNew:false },
-  { id:12, name:'Nuit de Soie',   inspiredBy:'Chanel N°5',           notes:'Ylang-Ylang · Rose · Sandalwood · Vetiver · Musk',    price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'women',  badge:null,         isNew:false },
+  { id:1,  name:'Rouge Cristal',  inspiredBy:'Baccarat Rouge 540',   notes:'Saffron · Ambergris · Cedar · Jasmine',               description:'An ethereal dance of saffron and jasmine wrapped in a warm amber haze. Rouge Cristal captures the iconic metallic-floral signature of the world\'s most coveted fragrance — clean, celestial, and utterly addictive. Longevity that carries you from morning to midnight.',                                                                        price:42.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'unisex', badge:'Bestseller', isNew:false },
+  { id:2,  name:'Oud Noir',       inspiredBy:'Oud Wood',             notes:'Oud · Rosewood · Vetiver · Sandalwood',               description:'Deep as midnight, rich as ancient earth. Oud Noir opens with smoky rosewood before settling into a warm, resinous base of genuine oud and sandalwood. A fragrance for those who command presence and leave a trail that lingers long after they\'ve left the room.',                                                                      price:42.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:null,         isNew:false },
+  { id:3,  name:'Soir Noir',      inspiredBy:'Black Orchid',         notes:'Black Orchid · Truffle · Dark Chocolate · Patchouli', description:'Dark, seductive, and otherworldly. Black orchid and truffle intertwine with rich patchouli in a scent that defies convention. Soir Noir is worn by those who leave a lasting, unforgettable impression — bold, mysterious, and unmistakably luxurious.',                                                                         price:42.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'unisex', badge:'New',        isNew:true  },
+  { id:4,  name:'Nuit Doré',      inspiredBy:"La Nuit de L'Homme",  notes:'Cardamom · Lavender · Cedarwood · Vetiver',           description:'Aromatic, elegant, and undeniably masculine. Crisp lavender meets the warm spice of cardamom before giving way to a sensuous cedar and vetiver dry-down. The scent of a man who knows exactly who he is — refined, confident, and timeless.',                                                                                    price:42.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:null,         isNew:false },
+  { id:5,  name:'Belle Minuit',   inspiredBy:'Good Girl',            notes:'Jasmine · Tuberose · Tonka Bean · Cocoa',             description:'Feminine power, bottled. Lush tuberose and intoxicating jasmine are anchored by a rich tonka bean and cocoa base — a duality of light and darkness, playfulness and depth. Belle Minuit is the fragrance of a woman who writes her own rules.',                                                                                 price:42.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'women',  badge:null,         isNew:false },
+  { id:6,  name:'Empire',         inspiredBy:'Creed Aventus',        notes:'Pineapple · Bergamot · Oakmoss · Birch · Musk',      description:'Success has a scent. The opening burst of pineapple and bergamot gives way to a sophisticated heart of oakmoss and birch, finishing with a clean, powerful musk that lingers for hours. Empire is worn by those who lead, not follow.',                                                                                          price:42.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:'Limited',    isNew:false },
+  { id:7,  name:'Rose Noire',     inspiredBy:'La Vie Est Belle',     notes:'Rose · Iris · Praline · Patchouli',                  description:'A modern love story written in flowers and praline. Rose and iris bloom over a warm, decadent base of praline and patchouli — radiant, feminine, and impossible to forget. Rose Noire is joy made tangible, beauty made wearable.',                                                                                           price:42.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'women',  badge:'New',        isNew:true  },
+  { id:8,  name:'Velvet Amber',   inspiredBy:'1 Million',            notes:'Blood Orange · Cinnamon · Leather · Amber',          description:'Bold, daring, and unapologetic. Blood orange and cinnamon ignite the senses before leather and amber create a warm, precious skin-like finish. Velvet Amber commands attention the moment you walk in — wear it and own the room.',                                                                                           price:42.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:'New',        isNew:true  },
+  { id:9,  name:'Fleur Noir',     inspiredBy:'Coco Mademoiselle',    notes:'Orange · Rose · Patchouli · Vetiver',                description:'A woman of contradictions. Fresh orange and floral rose give way to a deeply sensual patchouli and vetiver dry-down. Fleur Noir is the scent of effortless Parisian chic — spirited yet sophisticated, never predictable.',                                                                                                   price:42.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'women',  badge:null,         isNew:false },
+  { id:10, name:'Velours Blanc',  inspiredBy:'Molecule 01',          notes:'Iso E Super · Musk · Cedarwood · Amber',             description:'Minimalism elevated to art. This fascinatingly skin-reactive formula wraps around your natural scent, creating something entirely your own. Subtle yet magnetic — everyone will wonder what you\'re wearing, and no two people wear it the same.',                                                                              price:42.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'unisex', badge:null,         isNew:true  },
+  { id:11, name:'Or Noir',        inspiredBy:'Sauvage Parfum',       notes:'Bergamot · Sichuan Pepper · Ambroxan · Sandalwood',  description:'Raw and noble. Bergamot and Sichuan pepper ignite a powerful opening before ambroxan creates that signature electrifying trail. Or Noir is masculine perfumery at its most iconic — wild at first, deeply sophisticated at its core.',                                                                                      price:42.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:null,         isNew:false },
+  { id:12, name:'Nuit de Soie',   inspiredBy:'Chanel N°5',           notes:'Ylang-Ylang · Rose · Sandalwood · Vetiver · Musk',  description:'The fragrance that needs no introduction, reimagined. Ylang-ylang and rose create an opulent floral heart over a timeless sandalwood and vetiver base. Some fragrances transcend time — Nuit de Soie is one of them.',                                                                                                      price:42.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'women',  badge:null,         isNew:false },
 ];
 
 // ── CART ───────────────────────────────────────────────────────
@@ -56,7 +58,6 @@ const Cart = {
   count()  { return this.load().reduce((s, i) => s + i.qty, 0); },
   total()  { return this.load().reduce((s, i) => s + (i.price * i.qty), 0); },
 
-  // ── UI ──────────────────────────────────────
   open() {
     document.getElementById('cart-panel')?.classList.add('open');
     document.getElementById('cart-overlay')?.classList.add('show');
@@ -115,18 +116,18 @@ const Cart = {
               <span class="qty-val">${item.qty}</span>
               <button class="qty-btn" onclick="Cart.setQty(${item.id},${item.qty+1})">+</button>
             </div>
-            <span class="cart-item-price">£${(item.price * item.qty).toFixed(2)}</span>
+            <span class="cart-item-price">${fmtPrice(item.price * item.qty)}</span>
           </div>
         </div>
         <button class="cart-remove" onclick="Cart.remove(${item.id})">×</button>
       </div>`).join('');
 
     const total = this.total();
-    document.getElementById('cart-total-val').textContent = `£${total.toFixed(2)}`;
-    const rem = 50 - total;
+    document.getElementById('cart-total-val').textContent = fmtPrice(total);
+    const rem = 60 - total;
     const dEl  = document.getElementById('delivery-msg');
     if (dEl) {
-      dEl.textContent = rem > 0 ? `Add £${rem.toFixed(2)} more for free UK delivery` : '✓ You qualify for free UK delivery!';
+      dEl.textContent = rem > 0 ? `Add ${fmtPrice(rem)} more for free delivery` : '✓ You qualify for free delivery!';
       dEl.classList.toggle('free', rem <= 0);
     }
     document.getElementById('cart-footer').style.display = 'block';
@@ -156,9 +157,9 @@ const Account = {
   login(email, password) {
     const users = JSON.parse(localStorage.getItem(this.USERS_KEY) || '[]');
     const user  = users.find(u => u.email.toLowerCase() === email.toLowerCase());
-    if (!user)              return { ok: false, error: 'No account found with that email.' };
+    if (!user)                    return { ok: false, error: 'No account found with that email.' };
     if (user.password !== password) return { ok: false, error: 'Incorrect password.' };
-    this.save({ id: user.id, email: user.email, firstName: user.firstName, lastName: user.lastName });
+    this.save({ id: user.id, email: user.email, firstName: user.firstName, lastName: user.lastName, membership: user.membership || false });
     return { ok: true };
   },
 
@@ -166,11 +167,31 @@ const Account = {
     const users = JSON.parse(localStorage.getItem(this.USERS_KEY) || '[]');
     if (users.find(u => u.email.toLowerCase() === email.toLowerCase()))
       return { ok: false, error: 'An account with this email already exists.' };
-    const user = { id: Date.now(), firstName, lastName, email, password };
+    const user = { id: Date.now(), firstName, lastName, email, password, membership: false };
     users.push(user);
     localStorage.setItem(this.USERS_KEY, JSON.stringify(users));
-    this.save({ id: user.id, email: user.email, firstName, lastName });
+    this.save({ id: user.id, email: user.email, firstName, lastName, membership: false });
     return { ok: true };
+  },
+
+  joinMembership() {
+    const session = this.load();
+    if (!session) return;
+    const users = JSON.parse(localStorage.getItem(this.USERS_KEY) || '[]');
+    const user  = users.find(u => u.id === session.id);
+    if (user) { user.membership = true; localStorage.setItem(this.USERS_KEY, JSON.stringify(users)); }
+    session.membership = true;
+    this.save(session);
+  },
+
+  cancelMembership() {
+    const session = this.load();
+    if (!session) return;
+    const users = JSON.parse(localStorage.getItem(this.USERS_KEY) || '[]');
+    const user  = users.find(u => u.id === session.id);
+    if (user) { user.membership = false; localStorage.setItem(this.USERS_KEY, JSON.stringify(users)); }
+    session.membership = false;
+    this.save(session);
   },
 
   logout() {
@@ -193,14 +214,12 @@ document.addEventListener('DOMContentLoaded', () => {
   Cart.updateBadge();
   Account.updateNavUI();
 
-  // Cart open
   document.querySelectorAll('.open-cart').forEach(btn =>
     btn.addEventListener('click', () => Cart.open()));
   document.getElementById('close-cart')?.addEventListener('click',   () => Cart.close());
   document.getElementById('cart-overlay')?.addEventListener('click', () => Cart.close());
   document.addEventListener('keydown', e => { if (e.key === 'Escape') Cart.close(); });
 
-  // Nav scroll
   const nav = document.getElementById('nav');
   if (nav) {
     const upd = () => nav.classList.toggle('scrolled', window.scrollY > 60);

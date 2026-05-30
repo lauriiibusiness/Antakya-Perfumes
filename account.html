@@ -163,6 +163,9 @@
         <button class="btn-sm danger" onclick="Account.logout()">Sign Out</button>
       </div>
     </div>
+
+    <!-- MEMBERSHIP -->
+    <div id="membership-section" style="margin-top:36px"></div>
   </div>
 </main>
 
@@ -179,7 +182,7 @@
   <div id="cart-items"></div>
   <div id="cart-footer">
     <p id="delivery-msg"></p>
-    <div class="cart-total-row"><span class="cart-total-label">Total</span><span id="cart-total-val">£0.00</span></div>
+    <div class="cart-total-row"><span class="cart-total-label">Total</span><span id="cart-total-val">€0,00</span></div>
     <a href="cart.html" class="cart-checkout-btn" onclick="Cart.close()">Proceed to Checkout</a>
   </div>
 </div>
@@ -239,6 +242,56 @@ function showProfile() {
     <p><strong style="color:var(--cream)">Name:</strong> ${user.firstName} ${user.lastName || ''}</p>
     <p><strong style="color:var(--cream)">Email:</strong> ${user.email}</p>
     <p style="margin-top:8px"><a href="#" style="color:var(--gold);font-size:.72rem" onclick="alert('Password change coming soon!')">Change password →</a></p>`;
+
+  renderMembership(user);
+}
+
+function renderMembership(user) {
+  const el = document.getElementById('membership-section');
+  if (!el) return;
+  if (user.membership) {
+    el.innerHTML = `
+      <div class="membership-card">
+        <span class="membership-badge">Active</span>
+        <h2 class="membership-title">Scent <em>Club</em></h2>
+        <div style="margin:14px 0 20px">
+          <span class="membership-active">Membership active</span>
+        </div>
+        <ul class="membership-perks">
+          <li>A hand-selected new perfume delivered to your door every month</li>
+          <li>Early access to new arrivals before anyone else</li>
+          <li>Exclusive member-only fragrances never sold individually</li>
+          <li>Free priority delivery on every shipment</li>
+        </ul>
+        <p style="font-size:.68rem;color:var(--muted);margin-bottom:18px">Your next perfume ships on the 1st of next month.</p>
+        <button class="btn-sm danger" onclick="cancelMembership()">Cancel Membership</button>
+      </div>`;
+  } else {
+    el.innerHTML = `
+      <div class="membership-card">
+        <span class="membership-badge">Exclusive</span>
+        <h2 class="membership-title">Scent <em>Club</em></h2>
+        <div class="membership-price">€50,00 <span>/ month</span></div>
+        <ul class="membership-perks">
+          <li>A hand-selected new perfume delivered to your door every month</li>
+          <li>Early access to new arrivals before anyone else</li>
+          <li>Exclusive member-only fragrances never sold individually</li>
+          <li>Free priority delivery on every shipment</li>
+        </ul>
+        <button class="form-submit" style="max-width:280px" onclick="joinMembership()">Join Scent Club</button>
+      </div>`;
+  }
+}
+
+function joinMembership() {
+  Account.joinMembership();
+  renderMembership(Account.get());
+}
+
+function cancelMembership() {
+  if (!confirm('Cancel your Scent Club membership? You will lose access at the end of the current period.')) return;
+  Account.cancelMembership();
+  renderMembership(Account.get());
 }
 </script>
 </body>

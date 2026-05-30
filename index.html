@@ -245,12 +245,17 @@
     <span>ANTAKYA</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#new-arrivals">New Arrivals</a></li>
-    <li><a href="#collection">Collection</a></li>
-    <li><a href="#why">Our Story</a></li>
-    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#new-arrivals" data-i18n="nav_new">New Arrivals</a></li>
+    <li><a href="#collection" data-i18n="nav_collection">Collection</a></li>
+    <li><a href="#why" data-i18n="nav_story">Our Story</a></li>
+    <li><a href="#testimonials" data-i18n="nav_reviews">Reviews</a></li>
   </ul>
   <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('de')">DE</button>
+      <button class="lang-btn" onclick="setLang('tr')">TR</button>
+    </div>
     <a href="account.html" class="nav-icon-btn nav-account-icon" title="Account">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
       <span class="account-label"></span>
@@ -259,7 +264,7 @@
       <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
       <span class="cart-count">0</span>
     </button>
-    <a href="account.html" class="nav-btn">Order Now</a>
+    <a href="account.html" class="nav-btn" data-i18n="nav_order">Order Now</a>
   </div>
 </nav>
 
@@ -269,11 +274,11 @@
   <canvas id="particles-canvas"></canvas>
   <div class="hero-inner" id="hero-copy">
     <span class="hero-eyebrow">Extrait De Perfume &nbsp;·&nbsp; 30% Pure Oil</span>
-    <h1 class="hero-h1">Where Luxury<br>Meets <em>Essence</em></h1>
-    <p class="hero-sub">Premium inspired fragrances crafted with 30% pure oil concentration — the highest tier of perfumery. Experience the world's most coveted scents, reimagined for those who know.</p>
+    <h1 class="hero-h1" data-i18n="hero_h1">Where Luxury<br>Meets <em>Essence</em></h1>
+    <p class="hero-sub" data-i18n="hero_sub">Premium inspired fragrances crafted with 30% pure oil concentration — the highest tier of perfumery. Experience the world's most coveted scents, reimagined for those who know.</p>
     <div class="hero-actions">
-      <a href="#collection" class="btn-gold">Explore Collection</a>
-      <a href="#hyperframes" class="btn-ghost">Our Craft</a>
+      <a href="#collection" class="btn-gold" data-i18n="hero_cta1">Explore Collection</a>
+      <a href="#hyperframes" class="btn-ghost" data-i18n="hero_cta2">Our Craft</a>
     </div>
   </div>
   <div class="hero-scroll"><span>Scroll</span><div class="scroll-bar"></div></div>
@@ -489,10 +494,10 @@
     <p class="section-tag">Your Scent Awaits</p>
     <h2 class="cta-h2">Ready to<br><em>Experience It?</em></h2>
     <div style="width:48px;height:1px;background:var(--gold);margin:20px auto"></div>
-    <p class="cta-sub">Join thousands who've discovered their signature scent. Free UK delivery on orders over £50.</p>
+    <p class="cta-sub" data-i18n="cta_sub">Join thousands who've discovered their signature scent. Free delivery on orders over €60.</p>
     <div class="cta-btns">
-      <a href="#collection" class="btn-gold">Shop the Collection</a>
-      <a href="account.html" class="btn-ghost">Create Account</a>
+      <a href="#collection" class="btn-gold" data-i18n="cta_btn1">Shop the Collection</a>
+      <a href="account.html" class="btn-ghost" data-i18n="cta_btn2">Create Account</a>
     </div>
   </div>
 </section>
@@ -538,7 +543,7 @@
     <p id="delivery-msg"></p>
     <div class="cart-total-row">
       <span class="cart-total-label">Total</span>
-      <span id="cart-total-val">£0.00</span>
+      <span id="cart-total-val">€0,00</span>
     </div>
     <a href="cart.html" class="cart-checkout-btn" onclick="Cart.close()">Proceed to Checkout</a>
     <a href="cart.html" class="cart-view-link" onclick="Cart.close()">View full cart</a>
@@ -579,26 +584,99 @@ window.addEventListener('load', () => {
   dots.forEach(d=>d.addEventListener('click',()=>{ const i=+d.dataset.f; window.scrollTo({top:sec.offsetTop+(i/frames.length)*(sec.offsetHeight-innerHeight)+4,behavior:'smooth'}); }));
 })();
 
-// ── Render new arrivals
-document.addEventListener('DOMContentLoaded', () => {
-  const newGrid = document.getElementById('new-arrivals-grid');
-  const newProds = PRODUCTS.filter(p => p.isNew);
-  newGrid.innerHTML = newProds.map(p => `
-    <div class="product-card">
+// ── i18n ──────────────────────────────────────
+const TRANSLATIONS = {
+  en: {
+    nav_new:'New Arrivals', nav_collection:'Collection', nav_story:'Our Story', nav_reviews:'Reviews', nav_order:'Order Now',
+    hero_h1:'Where Luxury<br>Meets <em>Essence</em>',
+    hero_sub:"Premium inspired fragrances crafted with 30% pure oil concentration — the highest tier of perfumery. Experience the world's most coveted scents, reimagined for those who know.",
+    hero_cta1:'Explore Collection', hero_cta2:'Our Craft',
+    add_to_cart:'Add to Cart', cart_title:'Your Cart',
+    new_arrivals_tag:'Just Landed', new_arrivals_h:'New <em>Arrivals</em>',
+    new_arrivals_sub:'Fresh additions to the collection — be the first to wear them.',
+    coll_tag:'The Collection', coll_h:'Inspired <em>Fragrances</em>',
+    coll_sub:'Each fragrance is a love letter to a masterpiece. Same soul. Your price.',
+    cta_sub:'Join thousands who\'ve discovered their signature scent. Free delivery on orders over €60.',
+    cta_btn1:'Shop the Collection', cta_btn2:'Create Account',
+  },
+  de: {
+    nav_new:'Neuheiten', nav_collection:'Kollektion', nav_story:'Unsere Geschichte', nav_reviews:'Bewertungen', nav_order:'Jetzt Bestellen',
+    hero_h1:'Wo Luxus auf<br><em>Essenz</em> trifft',
+    hero_sub:'Premium-Düfte mit 30% reinem Ölanteil – die höchste Konzentrationsstufe in der Parfümerie. Erleben Sie die begehrtesten Düfte der Welt, neu interpretiert für wahre Kenner.',
+    hero_cta1:'Kollektion Entdecken', hero_cta2:'Unser Handwerk',
+    add_to_cart:'In den Warenkorb', cart_title:'Warenkorb',
+    new_arrivals_tag:'Neu Eingetroffen', new_arrivals_h:'Neue <em>Ankünfte</em>',
+    new_arrivals_sub:'Frische Ergänzungen der Kollektion – seien Sie der Erste.',
+    coll_tag:'Die Kollektion', coll_h:'Inspirierte <em>Düfte</em>',
+    coll_sub:'Jeder Duft ist ein Liebesbrief an ein Meisterwerk. Gleiche Seele. Ihr Preis.',
+    cta_sub:'Schließen Sie sich Tausenden an, die ihren Lieblingsduft entdeckt haben. Kostenloser Versand ab €60.',
+    cta_btn1:'Kollektion Shoppen', cta_btn2:'Konto Erstellen',
+  },
+  tr: {
+    nav_new:'Yeni Gelenler', nav_collection:'Koleksiyon', nav_story:'Hikayemiz', nav_reviews:'Yorumlar', nav_order:'Şimdi Sipariş Ver',
+    hero_h1:'Lüksün <em>Özüyle</em><br>Buluştuğu Yer',
+    hero_sub:'%30 saf yağ konsantrasyonuyla hazırlanmış premium ilham parfümleri — parfümerinin en yüksek seviyesi. Dünyanın en çok arzulanan kokularını, bilenler için yeniden yorumladık.',
+    hero_cta1:'Koleksiyonu Keşfet', hero_cta2:'Zanaatımız',
+    add_to_cart:'Sepete Ekle', cart_title:'Sepetiniz',
+    new_arrivals_tag:'Yeni Geldi', new_arrivals_h:'Yeni <em>Gelenler</em>',
+    new_arrivals_sub:'Koleksiyona taze eklemeler — ilk siz taşıyın.',
+    coll_tag:'Koleksiyon', coll_h:'İlham <em>Parfümleri</em>',
+    coll_sub:'Her parfüm bir başyapıta yazılmış aşk mektubu. Aynı ruh. Sizin fiyatınız.',
+    cta_sub:'Signature kokusunu keşfeden binlere katılın. €60 üzeri siparişlerde ücretsiz teslimat.',
+    cta_btn1:'Koleksiyonu Alışver', cta_btn2:'Hesap Oluştur',
+  }
+};
+let currentLang = localStorage.getItem('antakya_lang') || 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('antakya_lang', lang);
+  const t = TRANSLATIONS[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent === lang.toUpperCase()));
+  // Re-render products so Add to Cart button text updates
+  const activeFilter = document.querySelector('.filter-tab.active')?.dataset.filter || 'all';
+  const sort = document.getElementById('sort-select')?.value || 'featured';
+  renderProducts(activeFilter, sort);
+  renderNewArrivals();
+}
+
+function productCardHTML(p, badgeOverride) {
+  const t = TRANSLATIONS[currentLang];
+  const badge = badgeOverride || p.badge;
+  return `
+    <div class="product-card" data-category="${p.category}" data-new="${p.isNew}">
       <div class="prod-img">
-        <img src="${p.image}" alt="${p.name}">
-        <div class="prod-badge">New</div>
+        <img src="${p.image}" alt="${p.name}" loading="lazy">
+        ${badge ? `<div class="prod-badge">${badge}</div>` : ''}
       </div>
       <div class="prod-info">
         <p class="prod-inspired">Inspired By · ${p.inspiredBy}</p>
         <h3 class="prod-name">${p.name}</h3>
         <p class="prod-notes">${p.notes}</p>
+        <p class="prod-desc">${p.description}</p>
         <div class="prod-footer">
-          <div><div class="prod-price">£${p.price.toFixed(2)}</div><div class="prod-vol">${p.volume} · Extrait De Perfume</div></div>
-          <button class="prod-btn" onclick="Cart.add(${p.id})">Add to Cart</button>
+          <div><div class="prod-price">${fmtPrice(p.price)}</div><div class="prod-vol">${p.volume} · Extrait De Perfume</div></div>
+          <button class="prod-btn" onclick="Cart.add(${p.id})">${t.add_to_cart}</button>
         </div>
       </div>
-    </div>`).join('');
+    </div>`;
+}
+
+function renderNewArrivals() {
+  const newGrid = document.getElementById('new-arrivals-grid');
+  if (!newGrid) return;
+  const newProds = PRODUCTS.filter(p => p.isNew);
+  newGrid.innerHTML = newProds.map(p => productCardHTML(p, 'New')).join('');
+}
+
+// ── Render new arrivals
+document.addEventListener('DOMContentLoaded', () => {
+  setLang(currentLang);
+  renderNewArrivals();
 
   // ── Render & filter main collection
   renderProducts('all', 'featured');
@@ -629,22 +707,7 @@ function renderProducts(filter, sort) {
     grid.innerHTML = `<p class="no-results">No fragrances found for this filter.</p>`;
     return;
   }
-  grid.innerHTML = list.map(p => `
-    <div class="product-card" data-category="${p.category}" data-new="${p.isNew}">
-      <div class="prod-img">
-        <img src="${p.image}" alt="${p.name}" loading="lazy">
-        ${p.badge ? `<div class="prod-badge">${p.badge}</div>` : ''}
-      </div>
-      <div class="prod-info">
-        <p class="prod-inspired">Inspired By · ${p.inspiredBy}</p>
-        <h3 class="prod-name">${p.name}</h3>
-        <p class="prod-notes">${p.notes}</p>
-        <div class="prod-footer">
-          <div><div class="prod-price">£${p.price.toFixed(2)}</div><div class="prod-vol">${p.volume} · Extrait De Perfume</div></div>
-          <button class="prod-btn" onclick="Cart.add(${p.id})">Add to Cart</button>
-        </div>
-      </div>
-    </div>`).join('');
+  grid.innerHTML = list.map(p => productCardHTML(p)).join('');
 }
 
 // ── Intersection Observer

@@ -212,30 +212,30 @@ function renderCartPage() {
           <div class="cpi-vol">${item.volume} · Extrait De Perfume</div>
         </div>
       </div>
-      <div class="cpi-price">£${item.price.toFixed(2)}</div>
+      <div class="cpi-price">${fmtPrice(item.price)}</div>
       <div class="cpi-qty">
         <button class="qty-btn" onclick="Cart.setQty(${item.id},${item.qty-1})">−</button>
         <span class="qty-val">${item.qty}</span>
         <button class="qty-btn" onclick="Cart.setQty(${item.id},${item.qty+1})">+</button>
       </div>
-      <div class="cpi-total">£${(item.price * item.qty).toFixed(2)}</div>
+      <div class="cpi-total">${fmtPrice(item.price * item.qty)}</div>
       <button class="cpi-remove" onclick="Cart.remove(${item.id})">×</button>
     </div>`).join('');
 
   const total = Cart.total();
-  document.getElementById('summary-subtotal').textContent = `£${total.toFixed(2)}`;
-  document.getElementById('summary-total').textContent    = `£${total.toFixed(2)}`;
-  const rem  = 50 - total;
+  document.getElementById('summary-subtotal').textContent = fmtPrice(total);
+  document.getElementById('summary-total').textContent    = fmtPrice(total);
+  const rem  = 60 - total;
   const dMsg = document.getElementById('summary-delivery-msg');
   const dEl  = document.getElementById('summary-delivery');
   if (rem > 0) {
-    dEl.textContent  = 'Standard (£3.99)';
-    dMsg.textContent = `Add £${rem.toFixed(2)} more for free delivery`;
+    dEl.textContent  = 'Standard (€3,99)';
+    dMsg.textContent = `Add ${fmtPrice(rem)} more for free delivery`;
     dMsg.classList.remove('free');
-    document.getElementById('summary-total').textContent = `£${(total + 3.99).toFixed(2)}`;
+    document.getElementById('summary-total').textContent = fmtPrice(total + 3.99);
   } else {
     dEl.textContent  = 'FREE';
-    dMsg.textContent = '✓ You qualify for free UK delivery!';
+    dMsg.textContent = '✓ You qualify for free delivery!';
     dMsg.classList.add('free');
   }
 }
