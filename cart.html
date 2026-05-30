@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart — Antakya Perfumes</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    .cart-page { max-width:1100px; margin:0 auto; padding:140px 56px 100px; }
+    .cart-page-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3rem); font-weight:300; color:var(--cream); margin-bottom:8px; }
+    .cart-page-title em { font-style:italic; color:var(--gold); }
+    .cart-page-sub { font-size:.72rem; color:var(--muted); letter-spacing:.05em; margin-bottom:48px; }
+
+    .cart-layout { display:grid; grid-template-columns:1fr 340px; gap:40px; align-items:start; }
+
+    /* ── Items ── */
+    .cart-items-section { background:var(--dark-2); border:1px solid rgba(201,168,76,.1); }
+    .cart-items-header { padding:20px 28px; border-bottom:1px solid rgba(201,168,76,.1); display:grid; grid-template-columns:3fr 1fr 1fr 40px; gap:16px; }
+    .cart-items-header span { font-size:.58rem; letter-spacing:.35em; text-transform:uppercase; color:var(--muted); }
+    .cart-page-item { display:grid; grid-template-columns:3fr 1fr 1fr 40px; gap:16px; align-items:center; padding:20px 28px; border-bottom:1px solid rgba(255,255,255,.04); }
+    .cpi-product { display:flex; gap:16px; align-items:center; }
+    .cpi-img { width:68px; height:84px; flex-shrink:0; background:#0d0d0d; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+    .cpi-img img { width:100%; height:100%; object-fit:cover; filter:brightness(.88) contrast(1.1); }
+    .cpi-name { font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--cream); margin-bottom:4px; }
+    .cpi-inspired { font-size:.62rem; color:var(--muted); letter-spacing:.05em; margin-bottom:4px; }
+    .cpi-vol { font-size:.6rem; color:var(--muted); letter-spacing:.1em; }
+    .cpi-price { font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--gold); }
+    .cpi-qty { display:flex; align-items:center; gap:0; border:1px solid rgba(201,168,76,.25); width:fit-content; }
+    .cpi-qty .qty-btn { background:none; border:none; color:var(--gold); width:30px; height:30px; cursor:pointer; font-size:1rem; transition:background .2s; }
+    .cpi-qty .qty-btn:hover { background:rgba(201,168,76,.12); }
+    .cpi-qty .qty-val { font-size:.78rem; width:28px; text-align:center; color:var(--cream); }
+    .cpi-total { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--cream); }
+    .cpi-remove { background:none; border:none; color:var(--muted); font-size:1.3rem; cursor:pointer; padding:4px; transition:color .3s; justify-self:center; }
+    .cpi-remove:hover { color:var(--cream); }
+    .cart-page-empty { padding:80px; text-align:center; color:var(--muted); }
+    .cart-page-empty p { font-size:.85rem; margin-bottom:28px; letter-spacing:.05em; }
+    .cart-actions-row { padding:20px 28px; display:flex; justify-content:space-between; align-items:center; }
+    .cart-continue { font-size:.62rem; letter-spacing:.25em; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color .3s; }
+    .cart-continue:hover { color:var(--gold); }
+    .cart-clear { background:none; border:none; font-size:.62rem; letter-spacing:.25em; text-transform:uppercase; color:var(--muted); cursor:pointer; font-family:'Jost',sans-serif; transition:color .3s; }
+    .cart-clear:hover { color:#e55; }
+
+    /* ── Summary ── */
+    .cart-summary { background:var(--dark-2); border:1px solid rgba(201,168,76,.1); padding:28px; position:sticky; top:100px; }
+    .summary-title { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:300; margin-bottom:24px; letter-spacing:.05em; }
+    .summary-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; font-size:.78rem; }
+    .summary-row span:first-child { color:var(--muted); }
+    .summary-row span:last-child { color:var(--cream); }
+    .summary-row.total { border-top:1px solid rgba(201,168,76,.15); padding-top:16px; margin-top:16px; }
+    .summary-row.total span:first-child { font-size:.62rem; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); }
+    .summary-row.total span:last-child { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--gold); }
+    .summary-delivery { background:rgba(201,168,76,.06); border:1px solid rgba(201,168,76,.15); padding:12px 16px; margin:16px 0; font-size:.68rem; color:var(--muted); letter-spacing:.04em; line-height:1.6; }
+    .summary-delivery.free { color:var(--gold); border-color:rgba(201,168,76,.3); }
+    .checkout-btn { display:block; width:100%; background:var(--gold); color:var(--black); border:none; padding:16px; font-size:.62rem; letter-spacing:.35em; text-transform:uppercase; font-weight:500; cursor:pointer; text-decoration:none; text-align:center; font-family:'Jost',sans-serif; transition:background .3s; margin-bottom:12px; }
+    .checkout-btn:hover { background:var(--gold-light); }
+    .paypal-btn { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; background:#ffc439; color:#003087; border:none; padding:14px; font-size:.72rem; font-weight:700; cursor:pointer; font-family:Arial,sans-serif; transition:background .3s; }
+    .paypal-btn:hover { background:#f0b429; }
+    .secure-note { text-align:center; font-size:.6rem; color:var(--muted); letter-spacing:.1em; margin-top:14px; display:flex; align-items:center; justify-content:center; gap:6px; }
+    .secure-note::before { content:'🔒'; font-size:.7rem; }
+
+    @media(max-width:800px){
+      .cart-page { padding:120px 24px 80px; }
+      .cart-layout { grid-template-columns:1fr; }
+      .cart-items-header { display:none; }
+      .cart-page-item { grid-template-columns:1fr; gap:12px; }
+      .cpi-total { display:none; }
+    }
+  </style>
+</head>
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="lotus" viewBox="0 0 64 64">
+    <g transform="translate(32,44)">
+      <path d="M0,0 C-3.8,-9 -3.8,-22 0,-31 C3.8,-22 3.8,-9 0,0Z"/>
+      <path d="M0,0 C-3.8,-9 -3.8,-22 0,-31 C3.8,-22 3.8,-9 0,0Z" transform="rotate(-33)"/>
+      <path d="M0,0 C-3.8,-9 -3.8,-22 0,-31 C3.8,-22 3.8,-9 0,0Z" transform="rotate(33)"/>
+      <path d="M0,0 C-3.2,-7 -3.2,-18 0,-25 C3.2,-18 3.2,-7 0,0Z" transform="rotate(-63)"/>
+      <path d="M0,0 C-3.2,-7 -3.2,-18 0,-25 C3.2,-18 3.2,-7 0,0Z" transform="rotate(63)"/>
+      <path d="M0,0 C-2.2,2 -2,6.5 0,8.5 C2,6.5 2.2,2 0,0Z"/>
+    </g>
+  </symbol>
+</svg>
+
+<nav id="nav" class="scrolled">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 64 64" fill="var(--gold)"><use href="#lotus"/></svg>
+    <span>ANTAKYA</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#new-arrivals">New Arrivals</a></li>
+    <li><a href="index.html#collection">Collection</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="account.html" class="nav-icon-btn nav-account-icon">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      <span class="account-label"></span>
+    </a>
+    <button class="nav-icon-btn open-cart" aria-label="Cart">
+      <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-count">0</span>
+    </button>
+  </div>
+</nav>
+
+<main class="cart-page">
+  <h1 class="cart-page-title">Your <em>Cart</em></h1>
+  <p class="cart-page-sub" id="cart-page-sub">Loading…</p>
+
+  <div class="cart-layout" id="cart-layout">
+    <div>
+      <div class="cart-items-section">
+        <div class="cart-items-header">
+          <span>Product</span><span>Price</span><span>Quantity</span><span></span>
+        </div>
+        <div id="cart-page-items"></div>
+        <div class="cart-actions-row" id="cart-actions-row" style="display:none">
+          <a href="index.html#collection" class="cart-continue">← Continue Shopping</a>
+          <button class="cart-clear" onclick="if(confirm('Clear cart?')){Cart.clear()}">Clear Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-summary" id="cart-summary-box">
+      <h3 class="summary-title">Order Summary</h3>
+      <div class="summary-row"><span>Subtotal</span><span id="summary-subtotal">£0.00</span></div>
+      <div class="summary-row"><span>Delivery</span><span id="summary-delivery">Calculated at checkout</span></div>
+      <div id="summary-delivery-msg" class="summary-delivery"></div>
+      <div class="summary-row total"><span>Total</span><span id="summary-total">£0.00</span></div>
+      <a href="#checkout" class="checkout-btn" onclick="handleCheckout(event)">Checkout Securely</a>
+      <button class="paypal-btn" onclick="alert('PayPal integration coming soon!')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#003087"><path d="M7.1 21H4.3L6 10h5.6c2.8 0 4.5 1.3 4.1 4-.4 2.7-2.7 3.8-5.1 3.8H9l-.5 3.2zM10.3 6H4L2 17h2.3L5 13h4.3c4.2 0 7-2 7.5-5.8C17.3 3.6 14.8 2 11 2H5.6L4 8h2.3L7 6h3.3z"/></svg>
+        Pay with PayPal
+      </button>
+      <p class="secure-note">Secure checkout · 256-bit SSL</p>
+    </div>
+  </div>
+
+  <!-- Checkout Form (hidden until button click) -->
+  <div id="checkout-section" style="display:none;margin-top:48px">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:32px">Delivery <em>Details</em></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:700px">
+      <div class="form-group"><label>First Name</label><input type="text" placeholder="Sarah" class="form-input"></div>
+      <div class="form-group"><label>Last Name</label><input type="text" placeholder="Mitchell" class="form-input"></div>
+      <div class="form-group" style="grid-column:1/-1"><label>Email</label><input type="email" placeholder="sarah@example.com" class="form-input"></div>
+      <div class="form-group" style="grid-column:1/-1"><label>Address</label><input type="text" placeholder="123 High Street" class="form-input"></div>
+      <div class="form-group"><label>City</label><input type="text" placeholder="London" class="form-input"></div>
+      <div class="form-group"><label>Postcode</label><input type="text" placeholder="SW1A 1AA" class="form-input"></div>
+      <div class="form-group" style="grid-column:1/-1"><label>Phone</label><input type="tel" placeholder="+44 7700 000000" class="form-input"></div>
+    </div>
+    <div style="margin-top:32px">
+      <button class="btn-gold" onclick="placeOrder()" style="padding:16px 48px;font-size:.65rem">Place Order</button>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-bottom" style="max-width:1100px;margin:0 auto;padding:24px 0 0;border-top:1px solid rgba(201,168,76,.08)">
+    <p>© 2025 Antakya Perfumes.</p>
+    <p><a href="terms.html">Terms</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy</a></p>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cart-overlay"></div>
+<div id="cart-panel">
+  <div class="cart-header"><h3>Your Cart</h3><button class="cart-header-close" id="close-cart">×</button></div>
+  <div id="cart-items"></div>
+  <div id="cart-footer">
+    <p id="delivery-msg"></p>
+    <div class="cart-total-row"><span class="cart-total-label">Total</span><span id="cart-total-val">£0.00</span></div>
+    <a href="cart.html" class="cart-checkout-btn" onclick="Cart.close()">Proceed to Checkout</a>
+  </div>
+</div>
+
+<style>
+  .form-group { display:flex; flex-direction:column; gap:6px; }
+  .form-group label { font-size:.6rem; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); }
+  .form-input { background:var(--dark-3); border:1px solid rgba(201,168,76,.2); color:var(--cream); padding:12px 16px; font-size:.82rem; font-family:'Jost',sans-serif; outline:none; transition:border-color .3s; }
+  .form-input:focus { border-color:var(--gold); }
+  .form-input::placeholder { color:rgba(119,119,119,.5); }
+</style>
+
+<script src="js/store.js"></script>
+<script>
+function renderCartPage() {
+  const items   = Cart.load();
+  const itemsEl = document.getElementById('cart-page-items');
+  const sub     = document.getElementById('cart-page-sub');
+  const actRow  = document.getElementById('cart-actions-row');
+  const sumBox  = document.getElementById('cart-summary-box');
+
+  if (items.length === 0) {
+    sub.textContent = 'Your cart is empty.';
+    itemsEl.innerHTML = `<div class="cart-page-empty"><p>You haven't added anything yet.</p><a href="index.html#collection" class="btn-gold">Shop Now</a></div>`;
+    actRow && (actRow.style.display = 'none');
+    sumBox && (sumBox.style.display = 'none');
+    return;
+  }
+
+  const count = Cart.count();
+  sub.textContent = `${count} item${count !== 1 ? 's' : ''} in your cart`;
+  actRow && (actRow.style.display = 'flex');
+  sumBox && (sumBox.style.display = 'block');
+
+  itemsEl.innerHTML = items.map(item => `
+    <div class="cart-page-item" data-id="${item.id}">
+      <div class="cpi-product">
+        <div class="cpi-img"><img src="${item.image}" alt="${item.name}"></div>
+        <div>
+          <div class="cpi-name">${item.name}</div>
+          <div class="cpi-inspired">Inspired by ${item.inspiredBy}</div>
+          <div class="cpi-vol">${item.volume} · Extrait De Perfume</div>
+        </div>
+      </div>
+      <div class="cpi-price">£${item.price.toFixed(2)}</div>
+      <div class="cpi-qty">
+        <button class="qty-btn" onclick="Cart.setQty(${item.id},${item.qty-1})">−</button>
+        <span class="qty-val">${item.qty}</span>
+        <button class="qty-btn" onclick="Cart.setQty(${item.id},${item.qty+1})">+</button>
+      </div>
+      <div class="cpi-total">£${(item.price * item.qty).toFixed(2)}</div>
+      <button class="cpi-remove" onclick="Cart.remove(${item.id})">×</button>
+    </div>`).join('');
+
+  const total = Cart.total();
+  document.getElementById('summary-subtotal').textContent = `£${total.toFixed(2)}`;
+  document.getElementById('summary-total').textContent    = `£${total.toFixed(2)}`;
+  const rem  = 50 - total;
+  const dMsg = document.getElementById('summary-delivery-msg');
+  const dEl  = document.getElementById('summary-delivery');
+  if (rem > 0) {
+    dEl.textContent  = 'Standard (£3.99)';
+    dMsg.textContent = `Add £${rem.toFixed(2)} more for free delivery`;
+    dMsg.classList.remove('free');
+    document.getElementById('summary-total').textContent = `£${(total + 3.99).toFixed(2)}`;
+  } else {
+    dEl.textContent  = 'FREE';
+    dMsg.textContent = '✓ You qualify for free UK delivery!';
+    dMsg.classList.add('free');
+  }
+}
+
+function handleCheckout(e) {
+  e.preventDefault();
+  if (!Account.isLoggedIn()) {
+    if (confirm('Please sign in to checkout. Go to account page?')) window.location.href = 'account.html';
+    return;
+  }
+  document.getElementById('checkout-section').style.display = 'block';
+  document.getElementById('checkout-section').scrollIntoView({ behavior:'smooth' });
+}
+
+function placeOrder() {
+  const inputs = document.querySelectorAll('.form-input');
+  let valid = true;
+  inputs.forEach(i => { if (!i.value.trim()) { i.style.borderColor='#e55'; valid=false; } else i.style.borderColor=''; });
+  if (!valid) { alert('Please fill in all delivery details.'); return; }
+  Cart.clear();
+  document.getElementById('checkout-section').innerHTML = `
+    <div style="text-align:center;padding:60px">
+      <div style="font-size:3rem;margin-bottom:20px">✓</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold);margin-bottom:12px">Order Placed!</h2>
+      <p style="color:var(--muted);font-size:.82rem;margin-bottom:28px">Thank you for your order. You'll receive a confirmation email shortly.</p>
+      <a href="index.html" class="btn-gold">Continue Shopping</a>
+    </div>`;
+  document.getElementById('cart-layout').style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', renderCartPage);
+</script>
+</body>
+</html>

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antakya Perfumes | Extrait De Perfume</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    /* ── INTRO ──────────────────────────────────── */
+    #intro { position:fixed; inset:0; z-index:9999; background:#000; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; transition:opacity 1.2s cubic-bezier(.4,0,.2,1), visibility 1.2s; }
+    #intro.out { opacity:0; visibility:hidden; pointer-events:none; }
+    .intro-line,.intro-line-b { height:1px; width:0; background:linear-gradient(90deg,transparent,var(--gold),transparent); animation:lineGrow 1.4s cubic-bezier(.4,0,.2,1) forwards; }
+    .intro-line { animation-delay:.2s; } .intro-line-b { animation-delay:1.3s; }
+    @keyframes lineGrow { to { width:220px; } }
+    .intro-logo { text-align:center; opacity:0; transform:translateY(16px); animation:fadeUp 1s ease .9s forwards; }
+    .intro-logo svg { width:56px; height:56px; fill:var(--gold); display:block; margin:0 auto 18px; }
+    .intro-logo h1 { font-family:'Cormorant Garamond',serif; font-size:2.2rem; letter-spacing:.35em; font-weight:300; color:var(--cream); }
+    .intro-logo p { font-size:.62rem; letter-spacing:.55em; text-transform:uppercase; color:var(--gold); margin-top:10px; }
+    @keyframes fadeUp { to { opacity:1; transform:none; } }
+
+    /* ── HERO — full-bleed cinematic ────────────── */
+    #hero {
+      min-height:100vh; position:relative; display:flex;
+      align-items:flex-end; overflow:hidden;
+      background-image:url('images/hero-hands.jpg');
+      background-size:cover;
+      background-position:center 18%;
+    }
+    /* Multi-layer overlay: left dark band for text + bottom fade */
+    .hero-overlay {
+      position:absolute; inset:0; pointer-events:none;
+      background:
+        linear-gradient(to right, rgba(8,8,8,.88) 0%, rgba(8,8,8,.55) 38%, rgba(8,8,8,.1) 65%, rgba(8,8,8,0) 100%),
+        linear-gradient(to top,   rgba(8,8,8,.75) 0%, rgba(8,8,8,.0) 35%),
+        linear-gradient(to bottom,rgba(8,8,8,.5)  0%, transparent 18%);
+    }
+    #particles-canvas { position:absolute; inset:0; pointer-events:none; opacity:.45; z-index:1; }
+    .hero-inner {
+      position:relative; z-index:2;
+      width:100%; max-width:640px;
+      padding:0 56px 100px;
+      opacity:0; transform:translateY(28px);
+      transition:opacity 1.3s cubic-bezier(.16,1,.3,1) .2s, transform 1.3s cubic-bezier(.16,1,.3,1) .2s;
+    }
+    .hero-inner.in { opacity:1; transform:none; }
+    .hero-eyebrow { font-size:.6rem; letter-spacing:.55em; text-transform:uppercase; color:var(--gold); margin-bottom:22px; display:block; }
+    .hero-h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,5.5vw,5.5rem); font-weight:300; line-height:1.04; color:var(--cream); margin-bottom:22px; }
+    .hero-h1 em { font-style:italic; color:var(--gold); }
+    .hero-sub { font-size:.82rem; line-height:1.9; color:rgba(245,240,232,.7); max-width:440px; margin-bottom:44px; font-weight:300; }
+    .hero-actions { display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
+    /* Ken Burns on the whole hero background */
+    @keyframes heroKB { from{background-size:110%} to{background-size:100%} }
+    #hero { animation:heroKB 8s cubic-bezier(.16,1,.3,1) forwards; }
+    .hero-scroll {
+      position:absolute; bottom:36px; right:56px; z-index:3;
+      display:flex; flex-direction:column; align-items:center; gap:8px;
+      opacity:0; animation:fadeUp .8s ease 3.8s forwards;
+    }
+    .hero-scroll span { font-size:.55rem; letter-spacing:.5em; text-transform:uppercase; color:rgba(245,240,232,.5); }
+    .scroll-bar { width:1px; height:44px; background:linear-gradient(to bottom,var(--gold),transparent); animation:scrollDrop 2.4s ease-in-out infinite; }
+    @keyframes scrollDrop { 0%{transform:scaleY(0);transform-origin:top;opacity:1}45%{transform:scaleY(1);transform-origin:top;opacity:1}46%{transform:scaleY(1);transform-origin:bottom;opacity:1}100%{transform:scaleY(0);transform-origin:bottom;opacity:0} }
+
+    /* ── STATS ──────────────────────────────────── */
+    .stats-bar { background:var(--dark-2); border-top:1px solid rgba(201,168,76,.12); border-bottom:1px solid rgba(201,168,76,.12); display:flex; justify-content:center; }
+    .stat-item { flex:1; max-width:220px; padding:28px 24px; text-align:center; border-right:1px solid rgba(201,168,76,.1); }
+    .stat-item:last-child { border-right:none; }
+    .stat-num { font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--gold); font-weight:300; line-height:1; }
+    .stat-lbl { font-size:.6rem; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); margin-top:6px; }
+
+    /* ── NEW ARRIVALS ───────────────────────────── */
+    #new-arrivals { padding:100px 56px; overflow:hidden; }
+    .section-head { text-align:center; margin-bottom:60px; }
+    .section-tag { font-size:.6rem; letter-spacing:.55em; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+    .section-h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.4rem,5vw,3.8rem); font-weight:300; color:var(--cream); line-height:1.1; }
+    .section-h2 em { font-style:italic; color:var(--gold); }
+    .section-sub { font-size:.8rem; color:var(--muted); line-height:1.9; margin-top:12px; }
+    .new-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:24px; max-width:1280px; margin:0 auto; }
+    .new-badge { display:inline-block; background:var(--gold); color:var(--black); font-size:.55rem; letter-spacing:.25em; text-transform:uppercase; padding:4px 10px; font-weight:500; margin-bottom:10px; }
+
+    /* ── HYPERFRAMES ─────────────────────────────── */
+    #hyperframes { position:relative; height:500vh; }
+    .hf-sticky { position:sticky; top:0; height:100vh; overflow:hidden; }
+    .frame { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .9s cubic-bezier(.4,0,.2,1); }
+    .frame.active { opacity:1; pointer-events:auto; }
+    .frame-overlay { position:absolute; inset:0; pointer-events:none; }
+    .frame-bg { position:absolute; inset:0; background-size:cover; background-position:center; transform:scale(1.06); transition:transform 1.2s cubic-bezier(.4,0,.2,1),filter 1.2s; filter:brightness(.22) saturate(1.2); }
+    .frame.active .frame-bg { transform:scale(1); filter:brightness(.28) saturate(1.3); }
+    .frame-body { position:relative; z-index:2; display:flex; align-items:center; gap:72px; max-width:1160px; width:100%; padding:0 56px; }
+    .frame-body--center { justify-content:center; }
+    .frame-text-col { flex:1; }
+    .frame-img-col { flex:1; display:flex; justify-content:center; }
+    .frame-img-col img { max-height:78vh; max-width:100%; object-fit:contain; filter:drop-shadow(0 24px 70px rgba(0,0,0,.8)); opacity:0; transform:translateY(24px); transition:opacity .9s ease .3s,transform .9s cubic-bezier(.16,1,.3,1) .3s; }
+    .frame.active .frame-img-col img { opacity:1; transform:none; }
+    .frame-tag { font-size:.58rem; letter-spacing:.55em; text-transform:uppercase; color:var(--gold); margin-bottom:20px; opacity:0; transform:translateY(14px); transition:opacity .7s ease .15s,transform .7s ease .15s; }
+    .frame.active .frame-tag { opacity:1; transform:none; }
+    .frame-h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.4rem,4.5vw,4.2rem); font-weight:300; line-height:1.08; color:var(--cream); margin-bottom:20px; opacity:0; transform:translateY(20px); transition:opacity .8s ease .25s,transform .8s cubic-bezier(.16,1,.3,1) .25s; }
+    .frame.active .frame-h2 { opacity:1; transform:none; }
+    .frame-h2 em { font-style:italic; color:var(--gold); }
+    .frame-rule { width:0; height:1px; background:var(--gold); margin-bottom:22px; transition:width .7s ease .45s; }
+    .frame.active .frame-rule { width:48px; }
+    .frame-p { font-size:.82rem; line-height:1.9; color:rgba(245,240,232,.65); max-width:440px; font-weight:300; opacity:0; transform:translateY(14px); transition:opacity .7s ease .4s,transform .7s ease .4s; }
+    .frame.active .frame-p { opacity:1; transform:none; }
+    .frame-cta-wrap { margin-top:36px; opacity:0; transform:translateY(14px); transition:opacity .6s ease .6s,transform .6s ease .6s; }
+    .frame.active .frame-cta-wrap { opacity:1; transform:none; }
+    .hf-dots { position:absolute; right:44px; top:50%; transform:translateY(-50%); z-index:10; display:flex; flex-direction:column; gap:14px; }
+    .hf-dot { width:5px; height:5px; border-radius:50%; background:rgba(201,168,76,.3); cursor:pointer; transition:background .3s,transform .3s; }
+    .hf-dot.on { background:var(--gold); transform:scale(1.6); }
+
+    /* ── GALLERY STRIP ──────────────────────────── */
+    #gallery { padding:80px 0; background:var(--dark-2); border-top:1px solid rgba(201,168,76,.08); overflow:hidden; }
+    .gallery-label { text-align:center; font-size:.6rem; letter-spacing:.55em; text-transform:uppercase; color:var(--gold); margin-bottom:50px; }
+    .gallery-track-wrap { overflow:hidden; margin-bottom:16px; }
+    .gallery-track { display:flex; gap:16px; width:max-content; }
+    .gallery-track--fwd  { animation:marquee 24s linear infinite; }
+    .gallery-track--bwd  { animation:marquee 24s linear infinite reverse; }
+    @keyframes marquee { from{transform:translateX(0)}to{transform:translateX(-50%)} }
+    .gallery-track:hover { animation-play-state:paused; }
+    .gallery-card { width:240px; height:310px; flex-shrink:0; position:relative; overflow:hidden; cursor:zoom-in; }
+    .gallery-card-inner { position:absolute; inset:0; background:#0d0d0d; overflow:hidden; transition:transform .5s cubic-bezier(.16,1,.3,1); }
+    .gallery-card:hover .gallery-card-inner { transform:scale(1.03); }
+    .gallery-card-inner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(201,168,76,.05) 0%,transparent 70%); z-index:2; pointer-events:none; }
+    .gallery-card-inner::after  { content:''; position:absolute; bottom:0; left:0; right:0; height:50%; background:linear-gradient(to top,#0d0d0d 0%,transparent 100%); z-index:2; pointer-events:none; }
+    .gallery-card img { width:100%; height:100%; object-fit:cover; object-position:center top; filter:brightness(.85) contrast(1.12) saturate(.82); transition:transform .6s cubic-bezier(.16,1,.3,1); }
+    .gallery-card:hover img { transform:scale(1.05); }
+    .gallery-card::after { content:''; position:absolute; inset:0; border:1px solid transparent; transition:border-color .4s; z-index:3; pointer-events:none; }
+    .gallery-card:hover::after { border-color:rgba(201,168,76,.4); }
+
+    /* ── COLLECTION & FILTER ────────────────────── */
+    #collection { padding:110px 56px; }
+    .filter-bar { max-width:1280px; margin:0 auto 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; border-bottom:1px solid rgba(201,168,76,.1); padding-bottom:24px; }
+    .filter-tabs { display:flex; gap:4px; flex-wrap:wrap; }
+    .filter-tab { background:none; border:none; color:var(--muted); font-size:.62rem; letter-spacing:.25em; text-transform:uppercase; padding:8px 16px; cursor:pointer; font-family:'Jost',sans-serif; transition:color .3s,background .3s; border-bottom:2px solid transparent; }
+    .filter-tab:hover { color:var(--cream); }
+    .filter-tab.active { color:var(--gold); border-bottom-color:var(--gold); }
+    .filter-sort { display:flex; align-items:center; gap:10px; }
+    .filter-sort label { font-size:.6rem; letter-spacing:.25em; text-transform:uppercase; color:var(--muted); }
+    .filter-sort select { background:var(--dark-3); border:1px solid rgba(201,168,76,.2); color:var(--cream); padding:8px 14px; font-size:.68rem; font-family:'Jost',sans-serif; cursor:pointer; outline:none; -webkit-appearance:none; appearance:none; padding-right:28px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23c9a84c'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 10px center; }
+
+    .products-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; max-width:1280px; margin:0 auto; }
+    .product-card { background:var(--dark-2); border:1px solid rgba(201,168,76,.1); transition:border-color .4s,transform .4s,box-shadow .4s; cursor:pointer; }
+    .product-card:hover { border-color:rgba(201,168,76,.42); transform:translateY(-5px); box-shadow:0 24px 70px rgba(0,0,0,.55); }
+    .product-card.hidden { display:none; }
+    .prod-img { height:300px; background:#0d0d0d; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+    .prod-img::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 80% 55% at 50% 10%,rgba(201,168,76,.05) 0%,transparent 65%); z-index:2; pointer-events:none; }
+    .prod-img::after  { content:''; position:absolute; bottom:0; left:0; right:0; height:50%; background:linear-gradient(to top,#0d0d0d 0%,transparent 100%); z-index:2; pointer-events:none; }
+    .prod-img img { height:84%; max-width:100%; object-fit:contain; filter:brightness(.88) contrast(1.12) saturate(.84); transition:transform .6s cubic-bezier(.16,1,.3,1); position:relative; z-index:1; }
+    .product-card:hover .prod-img img { transform:scale(1.06) translateY(-8px); }
+    .prod-badge { position:absolute; top:14px; right:14px; z-index:3; background:var(--gold); color:var(--black); font-size:.56rem; letter-spacing:.25em; text-transform:uppercase; padding:5px 11px; font-weight:500; }
+    .prod-info { padding:22px 24px 24px; }
+    .prod-inspired { font-size:.58rem; letter-spacing:.38em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+    .prod-name { font-family:'Cormorant Garamond',serif; font-size:1.45rem; font-weight:400; color:var(--cream); margin-bottom:8px; }
+    .prod-notes { font-size:.72rem; color:var(--muted); line-height:1.7; margin-bottom:22px; }
+    .prod-footer { display:flex; align-items:center; justify-content:space-between; }
+    .prod-price { font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--gold); }
+    .prod-vol { font-size:.6rem; color:var(--muted); letter-spacing:.15em; margin-top:2px; }
+    .prod-btn { background:transparent; border:1px solid rgba(201,168,76,.4); color:var(--gold); padding:9px 22px; font-size:.6rem; letter-spacing:.28em; text-transform:uppercase; cursor:pointer; font-family:'Jost',sans-serif; transition:background .3s,border-color .3s,color .3s; }
+    .prod-btn:hover { background:var(--gold); border-color:var(--gold); color:var(--black); }
+    .no-results { grid-column:1/-1; text-align:center; padding:80px; color:var(--muted); font-size:.82rem; letter-spacing:.05em; }
+
+    /* ── WHY ────────────────────────────────────── */
+    #why { padding:130px 56px; background:var(--dark-2); border-top:1px solid rgba(201,168,76,.1); border-bottom:1px solid rgba(201,168,76,.1); }
+    .why-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:90px; align-items:center; }
+    .why-imgs { position:relative; height:580px; }
+    .why-img-a { position:absolute; right:0; top:0; width:72%; height:78%; object-fit:cover; object-position:center top; border-radius:0; box-shadow:0 20px 60px rgba(0,0,0,.5); }
+    .why-img-b { position:absolute; left:0; bottom:0; width:50%; height:52%; object-fit:cover; object-position:center 25%; box-shadow:0 10px 30px rgba(0,0,0,.45); opacity:.92; }
+    .why-img-frame { position:absolute; top:-20px; right:-20px; width:60%; height:60%; border:1px solid rgba(201,168,76,.18); pointer-events:none; }
+    .why-features { display:flex; flex-direction:column; gap:34px; margin-top:48px; }
+    .why-feat { display:flex; gap:22px; align-items:flex-start; }
+    .why-feat-icon { width:38px; height:38px; border:1px solid rgba(201,168,76,.28); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--gold); font-size:1rem; }
+    .why-feat-title { font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--cream); margin-bottom:6px; font-weight:500; }
+    .why-feat-text { font-size:.78rem; color:var(--muted); line-height:1.8; }
+
+    /* ── TESTIMONIALS ───────────────────────────── */
+    #testimonials { padding:130px 56px; position:relative; overflow:hidden; }
+    .testi-bg { position:absolute; inset:0; background:radial-gradient(ellipse 80% 50% at center,rgba(201,168,76,.04),transparent); pointer-events:none; }
+    .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; max-width:1100px; margin:64px auto 0; }
+    .testi-card { background:var(--dark-2); border:1px solid rgba(201,168,76,.1); padding:36px; }
+    .testi-stars { color:var(--gold); letter-spacing:3px; margin-bottom:18px; font-size:.9rem; }
+    .testi-quote { font-family:'Cormorant Garamond',serif; font-size:1.08rem; color:var(--cream); line-height:1.75; font-style:italic; margin-bottom:22px; }
+    .testi-by { font-size:.65rem; letter-spacing:.28em; text-transform:uppercase; color:var(--gold); }
+
+    /* ── CTA ────────────────────────────────────── */
+    #cta { padding:170px 56px; text-align:center; position:relative; overflow:hidden; }
+    .cta-bg { position:absolute; inset:0; background:radial-gradient(ellipse 60% 60% at center,rgba(201,168,76,.07),transparent); pointer-events:none; }
+    .cta-vert-line { width:1px; height:80px; background:linear-gradient(to bottom,transparent,var(--gold),transparent); margin:0 auto 52px; }
+    .cta-h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.8rem,6vw,5.2rem); font-weight:300; color:var(--cream); line-height:1.05; max-width:680px; margin:0 auto 20px; }
+    .cta-h2 em { font-style:italic; color:var(--gold); }
+    .cta-sub { font-size:.82rem; color:var(--muted); line-height:1.9; max-width:480px; margin:0 auto 52px; }
+    .cta-btns { display:flex; gap:22px; justify-content:center; align-items:center; flex-wrap:wrap; }
+
+    /* ── REVEAL ─────────────────────────────────── */
+    .reveal { opacity:0; transform:translateY(36px); transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1); }
+    .reveal.in { opacity:1; transform:none; }
+    .reveal-s > * { opacity:0; transform:translateY(28px); transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1); }
+    .reveal-s.in > *:nth-child(1){opacity:1;transform:none;transition-delay:.05s}.reveal-s.in > *:nth-child(2){opacity:1;transform:none;transition-delay:.15s}.reveal-s.in > *:nth-child(3){opacity:1;transform:none;transition-delay:.25s}.reveal-s.in > *:nth-child(4){opacity:1;transform:none;transition-delay:.35s}.reveal-s.in > *:nth-child(5){opacity:1;transform:none;transition-delay:.45s}.reveal-s.in > *:nth-child(6){opacity:1;transform:none;transition-delay:.55s}
+
+    @media(max-width:900px){
+      .hero-inner{flex-direction:column;padding:110px 28px 60px;text-align:center;gap:36px}
+      .hero-copy{transform:translateY(20px)}.hero-copy.in{transform:none}
+      .hero-sub{margin:0 auto 40px}.hero-actions{justify-content:center}
+      .bottle-slideshow{height:44vh}.hero-slide img{max-height:44vh}
+      .stats-bar{flex-wrap:wrap}.stat-item{max-width:50%;flex:0 0 50%;border-bottom:1px solid rgba(201,168,76,.1)}
+      #new-arrivals,#collection,#why,#testimonials,#cta{padding:80px 24px}
+      .products-grid{grid-template-columns:1fr}
+      .why-inner{grid-template-columns:1fr;gap:40px}.why-imgs{height:320px}
+      .testi-grid{grid-template-columns:1fr}
+      .frame-body{flex-direction:column !important;gap:32px;padding:0 24px}
+      .frame-img-col img{max-height:38vh}.hf-dots{right:16px}
+      .frame-text-col{text-align:center !important}.frame-rule{margin-left:auto;margin-right:auto}
+      .filter-bar{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOTUS SVG SYMBOL -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="lotus" viewBox="0 0 64 64">
+    <g transform="translate(32,44)">
+      <path d="M0,0 C-3.8,-9 -3.8,-22 0,-31 C3.8,-22 3.8,-9 0,0Z"/>
+      <path d="M0,0 C-3.8,-9 -3.8,-22 0,-31 C3.8,-22 3.8,-9 0,0Z" transform="rotate(-33)"/>
+      <path d="M0,0 C-3.8,-9 -3.8,-22 0,-31 C3.8,-22 3.8,-9 0,0Z" transform="rotate(33)"/>
+      <path d="M0,0 C-3.2,-7 -3.2,-18 0,-25 C3.2,-18 3.2,-7 0,0Z" transform="rotate(-63)"/>
+      <path d="M0,0 C-3.2,-7 -3.2,-18 0,-25 C3.2,-18 3.2,-7 0,0Z" transform="rotate(63)"/>
+      <path d="M0,0 C-2.2,2 -2,6.5 0,8.5 C2,6.5 2.2,2 0,0Z"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- CINEMATIC INTRO -->
+<div id="intro">
+  <div class="intro-line"></div>
+  <div class="intro-logo">
+    <svg viewBox="0 0 64 64"><use href="#lotus"/></svg>
+    <h1>ANTAKYA PERFUMES</h1>
+    <p>Extrait De Perfume &nbsp;·&nbsp; 30% Pure Oil</p>
+  </div>
+  <div class="intro-line-b"></div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 64 64" fill="var(--gold)"><use href="#lotus"/></svg>
+    <span>ANTAKYA</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#new-arrivals">New Arrivals</a></li>
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#why">Our Story</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="account.html" class="nav-icon-btn nav-account-icon" title="Account">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      <span class="account-label"></span>
+    </a>
+    <button class="nav-icon-btn open-cart" aria-label="Cart">
+      <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-count">0</span>
+    </button>
+    <a href="account.html" class="nav-btn">Order Now</a>
+  </div>
+</nav>
+
+<!-- HERO — full-bleed hands photo -->
+<section id="hero">
+  <div class="hero-overlay"></div>
+  <canvas id="particles-canvas"></canvas>
+  <div class="hero-inner" id="hero-copy">
+    <span class="hero-eyebrow">Extrait De Perfume &nbsp;·&nbsp; 30% Pure Oil</span>
+    <h1 class="hero-h1">Where Luxury<br>Meets <em>Essence</em></h1>
+    <p class="hero-sub">Premium inspired fragrances crafted with 30% pure oil concentration — the highest tier of perfumery. Experience the world's most coveted scents, reimagined for those who know.</p>
+    <div class="hero-actions">
+      <a href="#collection" class="btn-gold">Explore Collection</a>
+      <a href="#hyperframes" class="btn-ghost">Our Craft</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-bar"></div></div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar reveal-s">
+  <div class="stat-item"><div class="stat-num">30%</div><div class="stat-lbl">Pure Oil Concentration</div></div>
+  <div class="stat-item"><div class="stat-num">50+</div><div class="stat-lbl">Inspired Fragrances</div></div>
+  <div class="stat-item"><div class="stat-num">8h+</div><div class="stat-lbl">Lasting Power</div></div>
+  <div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">Handcrafted Batches</div></div>
+</div>
+
+<!-- NEW ARRIVALS -->
+<section id="new-arrivals">
+  <div class="section-head reveal">
+    <p class="section-tag">Just Landed</p>
+    <h2 class="section-h2">New <em>Arrivals</em></h2>
+    <div style="width:48px;height:1px;background:var(--gold);margin:20px auto 14px"></div>
+    <p class="section-sub">Fresh additions to the collection — be the first to wear them.</p>
+  </div>
+  <div class="new-grid reveal-s" id="new-arrivals-grid"></div>
+</section>
+
+<!-- HYPERFRAMES -->
+<section id="hyperframes">
+  <div class="hf-sticky">
+    <div class="hf-dots" id="hf-dots">
+      <div class="hf-dot on" data-f="0"></div><div class="hf-dot" data-f="1"></div>
+      <div class="hf-dot" data-f="2"></div><div class="hf-dot" data-f="3"></div><div class="hf-dot" data-f="4"></div>
+    </div>
+    <div class="frame active" id="f0">
+      <div class="frame-bg" style="background-image:url('images/bottle-two.jpg')"></div>
+      <div class="frame-overlay" style="background:linear-gradient(to right,rgba(8,8,8,.95) 38%,rgba(8,8,8,.55) 100%)"></div>
+      <div class="frame-body">
+        <div class="frame-text-col">
+          <p class="frame-tag">01 / 05 — The Collection</p>
+          <h2 class="frame-h2">Two Bottles.<br><em>One Vision.</em></h2>
+          <div class="frame-rule"></div>
+          <p class="frame-p">Every Antakya Perfumes bottle is filled with 30% pure oil — Extrait De Perfume concentration. The highest tier in fragrance intensity, delivering longevity that carries you from morning to midnight.</p>
+        </div>
+        <div class="frame-img-col"><img src="images/bottle-two.jpg" alt="Two Antakya bottles"></div>
+      </div>
+    </div>
+    <div class="frame" id="f1">
+      <div class="frame-bg" style="background-image:url('images/bottle-reflection.jpg')"></div>
+      <div class="frame-overlay" style="background:linear-gradient(to left,rgba(8,8,8,.96) 38%,rgba(8,8,8,.5) 100%)"></div>
+      <div class="frame-body" style="flex-direction:row-reverse">
+        <div class="frame-text-col" style="text-align:right">
+          <p class="frame-tag">02 / 05 — The Essence</p>
+          <h2 class="frame-h2">Reflection<br>of <em>Luxury</em></h2>
+          <div class="frame-rule" style="margin-left:auto"></div>
+          <p class="frame-p" style="margin-left:auto">Inspired by the world's most coveted fragrances, each Antakya scent captures the soul of luxury perfumery — the same captivating presence, without the premium price tag.</p>
+        </div>
+        <div class="frame-img-col"><img src="images/bottle-reflection.jpg" alt="Reflection"></div>
+      </div>
+    </div>
+    <div class="frame" id="f2">
+      <div class="frame-bg" style="background-image:url('images/bottle-hero.jpg');filter:brightness(.18) saturate(1.4)"></div>
+      <div class="frame-overlay" style="background:radial-gradient(ellipse 50% 70% at 50% 50%,rgba(201,168,76,.06) 0%,rgba(8,8,8,.9) 70%)"></div>
+      <div class="frame-body frame-body--center" style="flex-direction:column;text-align:center;gap:0">
+        <p class="frame-tag">03 / 05 — The Signature</p>
+        <h2 class="frame-h2">Antakya<br><em>Perfumes</em></h2>
+        <div class="frame-rule" style="margin:0 auto 22px"></div>
+        <p class="frame-p" style="text-align:center">A dark crystal vessel that transforms golden liquid into art. Each spray tells a story of ancient trade routes, exotic spices, and timeless elegance.</p>
+      </div>
+      <img src="images/bottle-hero.jpg" style="position:absolute;right:4%;bottom:0;height:90vh;object-fit:contain;filter:drop-shadow(0 0 80px rgba(201,168,76,.14));opacity:.85;z-index:1;" alt="">
+    </div>
+    <div class="frame" id="f3">
+      <div class="frame-bg" style="background-image:url('images/bottle-close1.jpg')"></div>
+      <div class="frame-overlay" style="background:linear-gradient(to left,rgba(8,8,8,.96) 36%,rgba(8,8,8,.5) 100%)"></div>
+      <div class="frame-body" style="flex-direction:row-reverse">
+        <div class="frame-text-col" style="text-align:right">
+          <p class="frame-tag">04 / 05 — The Detail</p>
+          <h2 class="frame-h2">Every Detail<br><em>Matters</em></h2>
+          <div class="frame-rule" style="margin-left:auto"></div>
+          <p class="frame-p" style="margin-left:auto">Gold-embossed branding. The lotus mark — symbol of ancient Antakya, gateway of the Silk Road. Hand-filled in small batches. Nothing mass-produced.</p>
+        </div>
+        <div class="frame-img-col"><img src="images/bottle-close1.jpg" alt="Detail"></div>
+      </div>
+    </div>
+    <div class="frame" id="f4">
+      <div class="frame-bg" style="background-image:url('images/bottle-close2.jpg');filter:brightness(.12) saturate(1.3)"></div>
+      <div class="frame-overlay" style="background:rgba(8,8,8,.88)"></div>
+      <div class="frame-body frame-body--center" style="flex-direction:column;text-align:center;gap:0">
+        <p class="frame-tag">05 / 05 — The Experience</p>
+        <h2 class="frame-h2">Find Your<br><em>Signature Scent</em></h2>
+        <div class="frame-rule" style="margin:0 auto 22px"></div>
+        <p class="frame-p" style="text-align:center">50+ inspired fragrances. 30% pure oil. Handcrafted in small batches.</p>
+        <div class="frame-cta-wrap"><a href="#collection" class="btn-gold">Shop the Collection</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY STRIP — lifestyle editorial photos -->
+<section id="gallery">
+  <p class="gallery-label">As Seen In The Wild</p>
+  <div class="gallery-track-wrap">
+    <div class="gallery-track gallery-track--fwd">
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/hero-hands.jpg"        alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-marble.jpg"  alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-beach.jpg"   alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-butler.jpg"  alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-redglove.jpg" alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-cocktail.jpg" alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-pool.jpg"    alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-bed.jpg"     alt="Antakya Perfumes"></div></div>
+      <!-- duplicate for seamless loop -->
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/hero-hands.jpg"        alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-marble.jpg"  alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-beach.jpg"   alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-butler.jpg"  alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-redglove.jpg" alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-cocktail.jpg" alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-pool.jpg"    alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-bed.jpg"     alt="Antakya Perfumes"></div></div>
+    </div>
+  </div>
+  <div class="gallery-track-wrap">
+    <div class="gallery-track gallery-track--bwd">
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-summer.jpg"   alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-cocktail2.jpg" alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/bottle-clean1.jpg"      alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-beach.jpg"    alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-butler.jpg"   alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/hero-hands.jpg"         alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-marble.jpg"   alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/bottle-clean2.jpg"      alt="Antakya Perfumes"></div></div>
+      <!-- duplicate -->
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-summer.jpg"   alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-cocktail2.jpg" alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/bottle-clean1.jpg"      alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-beach.jpg"    alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-butler.jpg"   alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/hero-hands.jpg"         alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/lifestyle-marble.jpg"   alt="Antakya Perfumes"></div></div>
+      <div class="gallery-card"><div class="gallery-card-inner"><img src="images/bottle-clean2.jpg"      alt="Antakya Perfumes"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTION with FILTERS -->
+<section id="collection">
+  <div class="section-head reveal">
+    <p class="section-tag">The Collection</p>
+    <h2 class="section-h2">Inspired <em>Fragrances</em></h2>
+    <div style="width:48px;height:1px;background:var(--gold);margin:20px auto 14px"></div>
+    <p class="section-sub">Each fragrance is a love letter to a masterpiece. Same soul. Your price.</p>
+  </div>
+  <div class="filter-bar reveal">
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="men">Men's</button>
+      <button class="filter-tab" data-filter="women">Women's</button>
+      <button class="filter-tab" data-filter="unisex">Unisex</button>
+      <button class="filter-tab" data-filter="new">New Arrivals</button>
+    </div>
+    <div class="filter-sort">
+      <label for="sort-select">Sort:</label>
+      <select id="sort-select">
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: Low–High</option>
+        <option value="price-desc">Price: High–Low</option>
+        <option value="name-asc">Name A–Z</option>
+      </select>
+    </div>
+  </div>
+  <div class="products-grid" id="products-grid"></div>
+</section>
+
+<!-- WHY ANTAKYA -->
+<section id="why">
+  <div class="why-inner">
+    <div class="why-imgs reveal">
+      <div class="why-img-frame"></div>
+      <img src="images/lifestyle-beach.jpg" class="why-img-a" alt="Antakya Perfumes">
+      <img src="images/hero-hands.jpg"     class="why-img-b" alt="Antakya Perfumes">
+    </div>
+    <div class="why-content reveal">
+      <p class="section-tag">Why Antakya</p>
+      <h2 class="section-h2" style="text-align:left;font-size:clamp(2rem,4vw,3.2rem)">Luxury Has<br><em>a New Name</em></h2>
+      <div style="width:48px;height:1px;background:var(--gold);margin:20px 0"></div>
+      <div class="why-features">
+        <div class="why-feat"><div class="why-feat-icon">◈</div><div><h4 class="why-feat-title">30% Pure Oil Concentration</h4><p class="why-feat-text">Extrait De Perfume — the highest concentration tier. Our 30% oil formula outlasts conventional eau de parfum by hours.</p></div></div>
+        <div class="why-feat"><div class="why-feat-icon">◈</div><div><h4 class="why-feat-title">Inspired by the World's Finest</h4><p class="why-feat-text">Each fragrance is painstakingly crafted to capture the essence of iconic luxury houses — accessible to everyone who deserves it.</p></div></div>
+        <div class="why-feat"><div class="why-feat-icon">◈</div><div><h4 class="why-feat-title">Premium Crystal Bottle</h4><p class="why-feat-text">Hand-filled in our signature dark crystal vessel with gold-embossed branding. The lotus mark — a symbol of Antakya's ancient heritage.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="testi-bg"></div>
+  <div class="section-head reveal">
+    <p class="section-tag">Reviews</p>
+    <h2 class="section-h2">What They <em>Say</em></h2>
+    <div style="width:48px;height:1px;background:var(--gold);margin:20px auto"></div>
+  </div>
+  <div class="testi-grid reveal-s">
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-quote">"I've been wearing Rouge Cristal for months now. My colleagues keep asking what I'm wearing — and I just smile. The longevity is incredible."</p><p class="testi-by">— Sarah M., London</p></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-quote">"The Oud Noir is a masterpiece. Deep, warm, and distinctive. The 30% concentration means two sprays carry me through the entire day."</p><p class="testi-by">— James K., Manchester</p></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-quote">"Never thought I'd find something this close to the designer at this price. The bottle itself is stunning — it sits proudly on my dresser."</p><p class="testi-by">— Layla A., Birmingham</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-bg"></div>
+  <div class="reveal">
+    <div class="cta-vert-line"></div>
+    <p class="section-tag">Your Scent Awaits</p>
+    <h2 class="cta-h2">Ready to<br><em>Experience It?</em></h2>
+    <div style="width:48px;height:1px;background:var(--gold);margin:20px auto"></div>
+    <p class="cta-sub">Join thousands who've discovered their signature scent. Free UK delivery on orders over £50.</p>
+    <div class="cta-btns">
+      <a href="#collection" class="btn-gold">Shop the Collection</a>
+      <a href="account.html" class="btn-ghost">Create Account</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">
+        <svg viewBox="0 0 64 64" fill="var(--gold)"><use href="#lotus"/></svg>
+        <span>ANTAKYA PERFUMES</span>
+      </div>
+      <p class="footer-desc">Premium inspired fragrances crafted with 30% pure oil concentration. Luxury reimagined for the modern world.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Collection</h5>
+      <ul><li><a href="#new-arrivals">New Arrivals</a></li><li><a href="#collection" onclick="document.querySelector('[data-filter=men]').click()">Men's</a></li><li><a href="#collection" onclick="document.querySelector('[data-filter=women]').click()">Women's</a></li><li><a href="#collection" onclick="document.querySelector('[data-filter=unisex]').click()">Unisex</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h5>Help</h5>
+      <ul><li><a href="account.html">My Account</a></li><li><a href="cart.html">My Cart</a></li><li><a href="terms.html">Terms &amp; Conditions</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">WhatsApp</a></li><li><a href="mailto:hello@antakyaperfumes.com">Email Us</a></li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Antakya Perfumes. All rights reserved. · Inspired by, not affiliated with any named brand.</p>
+    <p><a href="terms.html">Terms</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy</a> &nbsp;·&nbsp; Extrait De Perfume · 30% Pure Oil</p>
+  </div>
+</footer>
+
+<!-- CART PANEL -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<div id="cart-panel">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button class="cart-header-close" id="close-cart">×</button>
+  </div>
+  <div id="cart-items"></div>
+  <div id="cart-footer">
+    <p id="delivery-msg"></p>
+    <div class="cart-total-row">
+      <span class="cart-total-label">Total</span>
+      <span id="cart-total-val">£0.00</span>
+    </div>
+    <a href="cart.html" class="cart-checkout-btn" onclick="Cart.close()">Proceed to Checkout</a>
+    <a href="cart.html" class="cart-view-link" onclick="Cart.close()">View full cart</a>
+  </div>
+</div>
+
+<script src="js/store.js"></script>
+<script>
+// ── Intro
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('intro').classList.add('out');
+    setTimeout(() => {
+      document.getElementById('hero-copy').classList.add('in');
+    }, 400);
+  }, 3200);
+});
+
+// ── Particles
+(function(){
+  const c = document.getElementById('particles-canvas'), ctx = c.getContext('2d');
+  let W, H, ps = [];
+  function resize(){ W = c.width = innerWidth; H = c.height = innerHeight; }
+  resize(); addEventListener('resize', resize);
+  function P(){ this.reset = ()=>{ this.x=Math.random()*W; this.y=Math.random()*H; this.r=.6+Math.random()*1.4; this.vx=(Math.random()-.5)*.3; this.vy=-.15-Math.random()*.25; this.a=0; this.ma=.2+Math.random()*.35; this.l=0; this.ml=200+Math.random()*300; }; this.reset(); this.l=Math.random()*this.ml; }
+  for(let i=0;i<55;i++) ps.push(new P());
+  (function draw(){ ctx.clearRect(0,0,W,H); ps.forEach(p=>{ p.l++; if(p.l>p.ml)p.reset(); const t=p.l/p.ml; p.a=t<.2?(t/.2)*p.ma:t>.8?((1-t)/.2)*p.ma:p.ma; p.x+=p.vx; p.y+=p.vy; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle=`rgba(201,168,76,${p.a})`; ctx.fill(); }); requestAnimationFrame(draw); })();
+})();
+
+// ── Hyperframes
+(function(){
+  const sec = document.getElementById('hyperframes');
+  const frames = document.querySelectorAll('.frame');
+  const dots   = document.querySelectorAll('.hf-dot');
+  let cur = 0;
+  function activate(i){ if(i===cur)return; frames[cur].classList.remove('active'); dots[cur].classList.remove('on'); cur=i; frames[cur].classList.add('active'); dots[cur].classList.add('on'); }
+  window.addEventListener('scroll', ()=>{ const t=sec.getBoundingClientRect().top, tot=sec.offsetHeight-innerHeight, s=-t; if(s<0||s>tot)return; activate(Math.min(Math.floor((s/tot)*frames.length),frames.length-1)); }, {passive:true});
+  dots.forEach(d=>d.addEventListener('click',()=>{ const i=+d.dataset.f; window.scrollTo({top:sec.offsetTop+(i/frames.length)*(sec.offsetHeight-innerHeight)+4,behavior:'smooth'}); }));
+})();
+
+// ── Render new arrivals
+document.addEventListener('DOMContentLoaded', () => {
+  const newGrid = document.getElementById('new-arrivals-grid');
+  const newProds = PRODUCTS.filter(p => p.isNew);
+  newGrid.innerHTML = newProds.map(p => `
+    <div class="product-card">
+      <div class="prod-img">
+        <img src="${p.image}" alt="${p.name}">
+        <div class="prod-badge">New</div>
+      </div>
+      <div class="prod-info">
+        <p class="prod-inspired">Inspired By · ${p.inspiredBy}</p>
+        <h3 class="prod-name">${p.name}</h3>
+        <p class="prod-notes">${p.notes}</p>
+        <div class="prod-footer">
+          <div><div class="prod-price">£${p.price.toFixed(2)}</div><div class="prod-vol">${p.volume} · Extrait De Perfume</div></div>
+          <button class="prod-btn" onclick="Cart.add(${p.id})">Add to Cart</button>
+        </div>
+      </div>
+    </div>`).join('');
+
+  // ── Render & filter main collection
+  renderProducts('all', 'featured');
+
+  document.querySelectorAll('.filter-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      renderProducts(tab.dataset.filter, document.getElementById('sort-select').value);
+    });
+  });
+  document.getElementById('sort-select').addEventListener('change', e => {
+    const active = document.querySelector('.filter-tab.active');
+    renderProducts(active?.dataset.filter || 'all', e.target.value);
+  });
+});
+
+function renderProducts(filter, sort) {
+  let list = [...PRODUCTS];
+  if (filter === 'new')   list = list.filter(p => p.isNew);
+  else if (filter !== 'all') list = list.filter(p => p.category === filter);
+  if (sort === 'price-asc')  list.sort((a,b) => a.price - b.price);
+  if (sort === 'price-desc') list.sort((a,b) => b.price - a.price);
+  if (sort === 'name-asc')   list.sort((a,b) => a.name.localeCompare(b.name));
+
+  const grid = document.getElementById('products-grid');
+  if (list.length === 0) {
+    grid.innerHTML = `<p class="no-results">No fragrances found for this filter.</p>`;
+    return;
+  }
+  grid.innerHTML = list.map(p => `
+    <div class="product-card" data-category="${p.category}" data-new="${p.isNew}">
+      <div class="prod-img">
+        <img src="${p.image}" alt="${p.name}" loading="lazy">
+        ${p.badge ? `<div class="prod-badge">${p.badge}</div>` : ''}
+      </div>
+      <div class="prod-info">
+        <p class="prod-inspired">Inspired By · ${p.inspiredBy}</p>
+        <h3 class="prod-name">${p.name}</h3>
+        <p class="prod-notes">${p.notes}</p>
+        <div class="prod-footer">
+          <div><div class="prod-price">£${p.price.toFixed(2)}</div><div class="prod-vol">${p.volume} · Extrait De Perfume</div></div>
+          <button class="prod-btn" onclick="Cart.add(${p.id})">Add to Cart</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+// ── Intersection Observer
+const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('in'); }), {threshold:.1});
+document.querySelectorAll('.reveal,.reveal-s,.stats-bar').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

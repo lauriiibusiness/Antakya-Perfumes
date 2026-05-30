@@ -1,0 +1,210 @@
+/* ═══════════════════════════════════════════════
+   ANTAKYA PERFUMES — Store, Cart & Account Logic
+   ═══════════════════════════════════════════════ */
+
+// ── PRODUCT CATALOGUE ──────────────────────────────────────────
+const PRODUCTS = [
+  { id:1,  name:'Rouge Cristal',  inspiredBy:'Baccarat Rouge 540',   notes:'Saffron · Ambergris · Cedar · Jasmine',                price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'unisex', badge:'Bestseller', isNew:false },
+  { id:2,  name:'Oud Noir',       inspiredBy:'Oud Wood',             notes:'Oud · Rosewood · Vetiver · Sandalwood',                price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:null,         isNew:false },
+  { id:3,  name:'Soir Noir',      inspiredBy:'Black Orchid',         notes:'Black Orchid · Truffle · Dark Chocolate · Patchouli',  price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'unisex', badge:'New',        isNew:true  },
+  { id:4,  name:'Nuit Doré',      inspiredBy:"La Nuit de L'Homme",  notes:'Cardamom · Lavender · Cedarwood · Vetiver',            price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:null,         isNew:false },
+  { id:5,  name:'Belle Minuit',   inspiredBy:'Good Girl',            notes:'Jasmine · Tuberose · Tonka Bean · Cocoa',              price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'women',  badge:null,         isNew:false },
+  { id:6,  name:'Empire',         inspiredBy:'Creed Aventus',        notes:'Pineapple · Bergamot · Oakmoss · Birch · Musk',        price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:'Limited',    isNew:false },
+  { id:7,  name:'Rose Noire',     inspiredBy:'La Vie Est Belle',     notes:'Rose · Iris · Praline · Patchouli',                   price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'women',  badge:'New',        isNew:true  },
+  { id:8,  name:'Velvet Amber',   inspiredBy:'1 Million',            notes:'Blood Orange · Cinnamon · Leather · Amber',           price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:'New',        isNew:true  },
+  { id:9,  name:'Fleur Noir',     inspiredBy:'Coco Mademoiselle',    notes:'Orange · Rose · Patchouli · Vetiver',                 price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'women',  badge:null,         isNew:false },
+  { id:10, name:'Velours Blanc',  inspiredBy:'Molecule 01',          notes:'Iso E Super · Musk · Cedarwood · Amber',              price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'unisex', badge:null,         isNew:true  },
+  { id:11, name:'Or Noir',        inspiredBy:'Sauvage Parfum',       notes:'Bergamot · Sichuan Pepper · Ambroxan · Sandalwood',   price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'men',    badge:null,         isNew:false },
+  { id:12, name:'Nuit de Soie',   inspiredBy:'Chanel N°5',           notes:'Ylang-Ylang · Rose · Sandalwood · Vetiver · Musk',    price:34.99, volume:'50ml', image:'images/bottle-clean1.jpg', category:'women',  badge:null,         isNew:false },
+];
+
+// ── CART ───────────────────────────────────────────────────────
+const Cart = {
+  KEY: 'antakya_cart',
+
+  load()         { return JSON.parse(localStorage.getItem(this.KEY) || '[]'); },
+  save(items)    { localStorage.setItem(this.KEY, JSON.stringify(items)); },
+
+  add(productId, qty = 1) {
+    const items = this.load();
+    const p     = PRODUCTS.find(p => p.id === productId);
+    if (!p) return;
+    const ex = items.find(i => i.id === productId);
+    if (ex) { ex.qty += qty; }
+    else     { items.push({ id: p.id, name: p.name, inspiredBy: p.inspiredBy, price: p.price, image: p.image, volume: p.volume, qty }); }
+    this.save(items);
+    this.refresh();
+    this.toast(p.name);
+  },
+
+  remove(productId) {
+    this.save(this.load().filter(i => i.id !== productId));
+    this.refresh();
+  },
+
+  setQty(productId, qty) {
+    qty = parseInt(qty);
+    if (qty <= 0) return this.remove(productId);
+    const items = this.load();
+    const item  = items.find(i => i.id === productId);
+    if (item) item.qty = qty;
+    this.save(items);
+    this.refresh();
+  },
+
+  clear()  { this.save([]); this.refresh(); },
+  count()  { return this.load().reduce((s, i) => s + i.qty, 0); },
+  total()  { return this.load().reduce((s, i) => s + (i.price * i.qty), 0); },
+
+  // ── UI ──────────────────────────────────────
+  open() {
+    document.getElementById('cart-panel')?.classList.add('open');
+    document.getElementById('cart-overlay')?.classList.add('show');
+    document.body.style.overflow = 'hidden';
+    this.renderPanel();
+  },
+  close() {
+    document.getElementById('cart-panel')?.classList.remove('open');
+    document.getElementById('cart-overlay')?.classList.remove('show');
+    document.body.style.overflow = '';
+  },
+
+  refresh() {
+    this.updateBadge();
+    if (document.getElementById('cart-panel')?.classList.contains('open')) this.renderPanel();
+    if (typeof renderCartPage === 'function') renderCartPage();
+  },
+
+  updateBadge() {
+    const n = this.count();
+    document.querySelectorAll('.cart-count').forEach(el => {
+      el.textContent = n;
+      el.classList.toggle('has-items', n > 0);
+    });
+  },
+
+  renderPanel() {
+    const items = this.load();
+    const el    = document.getElementById('cart-items');
+    if (!el) return;
+
+    if (items.length === 0) {
+      el.innerHTML = `
+        <div class="cart-empty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="48" height="48">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <p>Your cart is empty</p>
+          <a href="index.html#collection" class="btn-gold" style="margin-top:20px;font-size:.6rem;letter-spacing:.3em;padding:12px 28px;" onclick="Cart.close()">Shop Now</a>
+        </div>`;
+      document.getElementById('cart-footer').style.display = 'none';
+      return;
+    }
+
+    el.innerHTML = items.map(item => `
+      <div class="cart-item" data-id="${item.id}">
+        <div class="cart-item-img"><img src="${item.image}" alt="${item.name}"></div>
+        <div class="cart-item-body">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-sub">Inspired by ${item.inspiredBy}</div>
+          <div class="cart-item-row">
+            <div class="qty-ctrl">
+              <button class="qty-btn" onclick="Cart.setQty(${item.id},${item.qty-1})">−</button>
+              <span class="qty-val">${item.qty}</span>
+              <button class="qty-btn" onclick="Cart.setQty(${item.id},${item.qty+1})">+</button>
+            </div>
+            <span class="cart-item-price">£${(item.price * item.qty).toFixed(2)}</span>
+          </div>
+        </div>
+        <button class="cart-remove" onclick="Cart.remove(${item.id})">×</button>
+      </div>`).join('');
+
+    const total = this.total();
+    document.getElementById('cart-total-val').textContent = `£${total.toFixed(2)}`;
+    const rem = 50 - total;
+    const dEl  = document.getElementById('delivery-msg');
+    if (dEl) {
+      dEl.textContent = rem > 0 ? `Add £${rem.toFixed(2)} more for free UK delivery` : '✓ You qualify for free UK delivery!';
+      dEl.classList.toggle('free', rem <= 0);
+    }
+    document.getElementById('cart-footer').style.display = 'block';
+  },
+
+  toast(name) {
+    document.querySelector('.cart-toast')?.remove();
+    const t = document.createElement('div');
+    t.className = 'cart-toast';
+    t.innerHTML = `<span class="toast-dot"></span><strong>${name}</strong> added to cart`;
+    document.body.appendChild(t);
+    requestAnimationFrame(() => t.classList.add('show'));
+    setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 400); }, 2800);
+  }
+};
+
+// ── ACCOUNT ────────────────────────────────────────────────────
+const Account = {
+  KEY:       'antakya_account',
+  USERS_KEY: 'antakya_users',
+
+  load()      { return JSON.parse(localStorage.getItem(this.KEY) || 'null'); },
+  save(data)  { localStorage.setItem(this.KEY, JSON.stringify(data)); },
+  isLoggedIn(){ return !!this.load(); },
+  get()       { return this.load(); },
+
+  login(email, password) {
+    const users = JSON.parse(localStorage.getItem(this.USERS_KEY) || '[]');
+    const user  = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+    if (!user)              return { ok: false, error: 'No account found with that email.' };
+    if (user.password !== password) return { ok: false, error: 'Incorrect password.' };
+    this.save({ id: user.id, email: user.email, firstName: user.firstName, lastName: user.lastName });
+    return { ok: true };
+  },
+
+  register({ firstName, lastName, email, password }) {
+    const users = JSON.parse(localStorage.getItem(this.USERS_KEY) || '[]');
+    if (users.find(u => u.email.toLowerCase() === email.toLowerCase()))
+      return { ok: false, error: 'An account with this email already exists.' };
+    const user = { id: Date.now(), firstName, lastName, email, password };
+    users.push(user);
+    localStorage.setItem(this.USERS_KEY, JSON.stringify(users));
+    this.save({ id: user.id, email: user.email, firstName, lastName });
+    return { ok: true };
+  },
+
+  logout() {
+    localStorage.removeItem(this.KEY);
+    window.location.href = 'index.html';
+  },
+
+  updateNavUI() {
+    const user  = this.load();
+    const label = document.querySelector('.account-label');
+    if (label) label.textContent = user ? user.firstName : '';
+    document.querySelectorAll('.nav-account-icon').forEach(el => {
+      el.title = user ? `Hello, ${user.firstName}` : 'Login / Register';
+    });
+  }
+};
+
+// ── GLOBAL DOM INIT ────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  Cart.updateBadge();
+  Account.updateNavUI();
+
+  // Cart open
+  document.querySelectorAll('.open-cart').forEach(btn =>
+    btn.addEventListener('click', () => Cart.open()));
+  document.getElementById('close-cart')?.addEventListener('click',   () => Cart.close());
+  document.getElementById('cart-overlay')?.addEventListener('click', () => Cart.close());
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') Cart.close(); });
+
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  if (nav) {
+    const upd = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+    window.addEventListener('scroll', upd, { passive: true });
+    upd();
+  }
+});
