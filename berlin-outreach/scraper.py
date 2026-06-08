@@ -1,77 +1,97 @@
 """
-scraper.py — Fetch Berlin businesses using Google Places Text Search API.
+scraper.py — Fetch Berlin businesses from OpenStreetMap via Overpass API.
+Completely free, no API key needed.
 """
 
-import requests
 import time
+import requests
 from typing import Optional
 
+OVERPASS_URL = "https://overpass-api.de/api/interpreter"
+
 CATEGORIES = {
-    "Restaurant": ["restaurant Berlin Mitte", "restaurant Berlin Prenzlauer Berg"],
-    "Café": ["café Berlin", "Kaffeehaus Berlin"],
-    "Friseursalon": ["Friseursalon Berlin", "hair salon Berlin"],
-    "Barbershop": ["barbershop Berlin", "Barbier Berlin"],
-    "Boutique": ["Boutique Berlin", "Modeboutique Berlin"],
-    "Fitnessstudio": ["Fitnessstudio Berlin", "gym Berlin"],
-    "Personal Trainer": ["personal trainer Berlin"],
-    "Nagelstudio": ["Nagelstudio Berlin", "nail salon Berlin"],
-    "Tattoostudio": ["Tattoostudio Berlin"],
-    "Einzelhandel": ["lokales Geschäft Berlin", "Laden Berlin Kreuzberg"],
+    "Restaurant":       [('amenity', 'restaurant')],
+    "Café":             [('amenity', 'cafe')],
+    "Friseursalon":     [('shop', 'hairdresser')],
+    "Barbershop":       [('shop', 'barber')],
+    "Boutique":         [('shop', 'clothes'), ('shop', 'boutique')],
+    "Fitnessstudio":    [('leisure', 'fitness_centre')],
+    "Personal Trainer": [('sport', 'fitness')],
+    "Nagelstudio":      [('shop', 'nail_salon')],
+    "Tattoostudio":     [('shop', 'tattoo')],
+    "Einzelhandel":     [('shop', 'gift'), ('shop', 'interior_decoration')],
 }
 
+MAX_PER_TAG = 10  # results per OSM tag query
 
-def search_places(query: str, api_key: str, max_results: int = 8) -> list[dict]:
-    url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
-    results = []
-    params = {
-        "query": query,
-        "key": api_key,
-        "language": "de",
-        "region": "de",
+
+def _build_query(key: str, value: str, limit: int) -> str:
+    return f"""
+[out:json][timeout:30];
+area["name"="Berlin"]["admin_level"="4"]->.berlin;
+(
+  node["{key}"="{value}"]["name"](area.berlin);
+  way["{key}"="{value}"]["name"](area.berlin);
+);
+out center {limit};
+"""
+
+
+def _extract(element: dict) -> dict:
+    tags = element.get("tags", {})
+    center = element.get("center", {})
+    lat = center.get("lat") or element.get("lat", "")
+    lon = center.get("lon") or element.get("lon", "")
+
+    website = (
+        tags.get("website") or
+        tags.get("contact:website") or
+        tags.get("url") or ""
+    )
+    email = (
+        tags.get("email") or
+        tags.get("contact:email") or ""
+    )
+    phone = (
+        tags.get("phone") or
+        tags.get("contact:phone") or ""
+    )
+    city = tags.get("addr:city", "Berlin")
+    street = tags.get("addr:street", "")
+    housenumber = tags.get("addr:housenumber", "")
+    address = f"{street} {housenumber}, {city}".strip(", ")
+
+    return {
+        "name": tags.get("name", ""),
+        "website": website,
+        "email": email,
+        "phone": phone,
+        "address": address,
     }
 
-    while len(results) < max_results:
-        resp = requests.get(url, params=params, timeout=10)
-        data = resp.json()
-        status = data.get("status")
 
-        if status == "ZERO_RESULTS":
-            break
-        if status != "OK":
-            print(f"  API error [{status}]: {data.get('error_message', '')}")
-            break
+def fetch_businesses(category: str, limit: int = MAX_PER_TAG) -> list[dict]:
+    results = []
+    seen_names: set[str] = set()
 
-        for place in data.get("results", []):
-            if len(results) >= max_results:
-                break
-            details = _get_place_details(place["place_id"], api_key)
-            results.append({
-                "name": place.get("name", ""),
-                "address": place.get("formatted_address", ""),
-                "website": details.get("website", ""),
-                "phone": details.get("formatted_phone_number", ""),
-                "place_id": place.get("place_id", ""),
-            })
-            time.sleep(0.3)
-
-        next_token = data.get("next_page_token")
-        if not next_token or len(results) >= max_results:
-            break
-        params = {"pagetoken": next_token, "key": api_key}
-        time.sleep(2)  # required before next_page_token becomes valid
+    for key, value in CATEGORIES.get(category, []):
+        query = _build_query(key, value, limit)
+        try:
+            resp = requests.post(
+                OVERPASS_URL,
+                data={"data": query},
+                timeout=40,
+            )
+            resp.raise_for_status()
+            elements = resp.json().get("elements", [])
+            for el in elements:
+                biz = _extract(el)
+                if not biz["name"] or biz["name"].lower() in seen_names:
+                    continue
+                seen_names.add(biz["name"].lower())
+                results.append(biz)
+        except Exception as exc:
+            print(f"  Overpass error ({key}={value}): {exc}")
+        time.sleep(1)  # be polite to the free API
 
     return results
-
-
-def _get_place_details(place_id: str, api_key: str) -> dict:
-    url = "https://maps.googleapis.com/maps/api/place/details/json"
-    params = {
-        "place_id": place_id,
-        "fields": "website,formatted_phone_number",
-        "key": api_key,
-    }
-    try:
-        resp = requests.get(url, params=params, timeout=10)
-        return resp.json().get("result", {})
-    except Exception:
-        return {}

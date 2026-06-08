@@ -2,7 +2,7 @@
 main.py — Orchestrate the full Berlin outreach pipeline.
 
 Steps:
-  1. Scrape businesses from Google Places API
+  1. Scrape businesses from OpenStreetMap (free, no API key)
   2. Find email addresses on their websites
   3. Generate personalized German cold emails
   4. Export berlin_outreach.csv
@@ -11,50 +11,43 @@ Then run:  python sender.py [--dry-run]
 """
 
 import csv
-import os
-import sys
 import time
 
-from dotenv import load_dotenv
-
-from scraper import CATEGORIES, search_places
+from scraper import CATEGORIES, fetch_businesses
 from email_finder import find_email
 from email_generator import generate_email, get_subject
 
-load_dotenv()
-
 OUTPUT_CSV = "berlin_outreach.csv"
-MAX_PER_QUERY = 8  # Places API returns max 20, we cap here
 
 
 def main() -> None:
-    api_key = os.getenv("GOOGLE_PLACES_API_KEY", "").strip()
-    if not api_key:
-        sys.exit("Error: Set GOOGLE_PLACES_API_KEY in .env")
-
-    # ── 1. Scrape businesses ─────────────────────────────────────────────────
     all_businesses: list[dict] = []
     seen: set[str] = set()
 
-    for category, queries in CATEGORIES.items():
+    # ── 1. Scrape businesses ─────────────────────────────────────────────────
+    for category in CATEGORIES:
         print(f"\n=== {category} ===")
-        for query in queries:
-            results = search_places(query, api_key, max_results=MAX_PER_QUERY)
-            for biz in results:
-                key = biz["name"].lower().strip()
-                if key in seen:
-                    continue
-                seen.add(key)
-                biz["category"] = category
-                all_businesses.append(biz)
-                print(f"  + {biz['name']:<40} website: {biz.get('website') or '—'}")
+        results = fetch_businesses(category)
+        for biz in results:
+            key = biz["name"].lower().strip()
+            if key in seen:
+                continue
+            seen.add(key)
+            biz["category"] = category
+            all_businesses.append(biz)
+            print(f"  + {biz['name']:<40} website: {biz.get('website') or '—'}")
 
     print(f"\n{'─'*60}")
-    print(f"Total unique businesses found: {len(all_businesses)}")
+    print(f"Total unique businesses: {len(all_businesses)}")
 
-    # ── 2. Find email addresses ──────────────────────────────────────────────
+    # ── 2. Find emails on websites ───────────────────────────────────────────
     print("\nSearching for email addresses on websites…")
     for i, biz in enumerate(all_businesses, 1):
+        # OSM sometimes already has the email in tags
+        if biz.get("email"):
+            print(f"  [{i}/{len(all_businesses)}] {biz['name']} → {biz['email']} (from OSM)")
+            continue
+
         if biz.get("website"):
             print(f"  [{i}/{len(all_businesses)}] {biz['name']}… ", end="", flush=True)
             email = find_email(biz["website"])
@@ -92,12 +85,10 @@ def main() -> None:
             })
 
     with_email = sum(1 for b in all_businesses if b.get("email"))
-    no_email = len(all_businesses) - with_email
-
     print(f"\n{'='*60}")
     print(f"Saved {len(all_businesses)} businesses to {OUTPUT_CSV}")
     print(f"  {with_email} have email addresses  ← ready to send")
-    print(f"  {no_email} without emails           ← email body still generated")
+    print(f"  {len(all_businesses) - with_email} without emails")
     print(f"\nNext steps:")
     print(f"  Preview:  python sender.py --dry-run")
     print(f"  Send:     python sender.py")
