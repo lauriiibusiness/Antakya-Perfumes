@@ -1,6 +1,3 @@
-.env
-berlin-outreach/.env
-berlin-outreach/berlin_outreach.csv
-berlin-outreach/sent_log_*.csv
 __pycache__/
 *.pyc
+.env
