@@ -1,5 +1,11 @@
-﻿"Business Name","Category","Email","Website","Email Body"
-"mittendrin – Restaurant & Café","Restaurant","mail@mittendrin-in-berlin.de","https://www.mittendrin-in-berlin.de","Hallo mittendrin – Restaurant & Café-Team,
+﻿"Feld","Wert"
+"━━━ #1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","mittendrin – Restaurant & Café"
+"Kategorie","Restaurant"
+"E-Mail","mail@mittendrin-in-berlin.de"
+"Website","https://www.mittendrin-in-berlin.de"
+"Betreff","Mehr Gäste durch eine modernere Website – mittendrin – Restaurant & Café"
+"E-Mail Text","Hallo mittendrin – Restaurant & Café-Team,
 
 beim Recherchieren nach schönen Berliner Restaurants bin ich auf Sie aufmerksam geworden – tolles Konzept!
 
@@ -13,7 +19,14 @@ Hätten Sie Lust auf ein kurzes 15-Minuten-Gespräch? Antworten Sie einfach auf 
 
 Viele Grüße aus Berlin,
 [DEIN NAME]"
-"Cô Chu","Restaurant","hello@co-chu.de","https://co-chu.de","Hallo Cô Chu-Team,
+"",""
+"━━━ #2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Cô Chu"
+"Kategorie","Restaurant"
+"E-Mail","hello@co-chu.de"
+"Website","https://co-chu.de"
+"Betreff","Mehr Gäste durch eine modernere Website – Cô Chu"
+"E-Mail Text","Hallo Cô Chu-Team,
 
 beim Recherchieren nach schönen Berliner Restaurants bin ich auf Sie aufmerksam geworden – tolles Konzept!
 
@@ -27,7 +40,14 @@ Hätten Sie Lust auf ein kurzes 15-Minuten-Gespräch? Antworten Sie einfach auf 
 
 Viele Grüße aus Berlin,
 [DEIN NAME]"
-"KUCHI Restaurants","Restaurant","mail@kuchi.de","https://kuchi.de","Hallo KUCHI Restaurants-Team,
+"",""
+"━━━ #3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","KUCHI Restaurants"
+"Kategorie","Restaurant"
+"E-Mail","mail@kuchi.de"
+"Website","https://kuchi.de"
+"Betreff","Mehr Gäste durch eine modernere Website – KUCHI Restaurants"
+"E-Mail Text","Hallo KUCHI Restaurants-Team,
 
 beim Recherchieren nach schönen Berliner Restaurants bin ich auf Sie aufmerksam geworden – tolles Konzept!
 
@@ -41,7 +61,14 @@ Hätten Sie Lust auf ein kurzes 15-Minuten-Gespräch? Antworten Sie einfach auf 
 
 Viele Grüße aus Berlin,
 [DEIN NAME]"
-"Maximilians Restaurant","Restaurant","info@maximilians-berlin.de","https://www.maximilians-berlin.de","Hallo Maximilians Restaurant-Team,
+"",""
+"━━━ #4 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Maximilians Restaurant"
+"Kategorie","Restaurant"
+"E-Mail","info@maximilians-berlin.de"
+"Website","https://www.maximilians-berlin.de"
+"Betreff","Mehr Gäste durch eine modernere Website – Maximilians Restaurant"
+"E-Mail Text","Hallo Maximilians Restaurant-Team,
 
 beim Recherchieren nach schönen Berliner Restaurants bin ich auf Sie aufmerksam geworden – tolles Konzept!
 
@@ -55,7 +82,14 @@ Hätten Sie Lust auf ein kurzes 15-Minuten-Gespräch? Antworten Sie einfach auf 
 
 Viele Grüße aus Berlin,
 [DEIN NAME]"
-"Restauration 1840","Restaurant","controlling@hm-restaurants.de","https://www.berlin-1840.de","Guten Tag Restauration 1840-Team,
+"",""
+"━━━ #5 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Restauration 1840"
+"Kategorie","Restaurant"
+"E-Mail","controlling@hm-restaurants.de"
+"Website","https://www.berlin-1840.de"
+"Betreff","Kurze Idee für Ihren Online-Auftritt – Restauration 1840"
+"E-Mail Text","Guten Tag Restauration 1840-Team,
 
 ich bin Webdesigner aus Berlin und schaue mir gern an, wie sich lokale Gastronomiebetriebe online präsentieren.
 
@@ -69,7 +103,14 @@ Haben Sie Interesse an einem kostenlosen 15-Minuten-Call? Schreiben Sie mir einf
 
 Herzliche Grüße,
 [DEIN NAME]"
-"FREA Restaurant","Restaurant","reservierung@frea.de","https://www.frea.de","Guten Tag FREA Restaurant-Team,
+"",""
+"━━━ #6 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","FREA Restaurant"
+"Kategorie","Restaurant"
+"E-Mail","reservierung@frea.de"
+"Website","https://www.frea.de"
+"Betreff","Kurze Idee für Ihren Online-Auftritt – FREA Restaurant"
+"E-Mail Text","Guten Tag FREA Restaurant-Team,
 
 ich bin Webdesigner aus Berlin und schaue mir gern an, wie sich lokale Gastronomiebetriebe online präsentieren.
 
@@ -83,7 +124,14 @@ Haben Sie Interesse an einem kostenlosen 15-Minuten-Call? Schreiben Sie mir einf
 
 Herzliche Grüße,
 [DEIN NAME]"
-"Ga Ya Ya","Restaurant","info@gayaya.de","https://www.gayaya.restaurant","Guten Tag Ga Ya Ya-Team,
+"",""
+"━━━ #7 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Ga Ya Ya"
+"Kategorie","Restaurant"
+"E-Mail","info@gayaya.de"
+"Website","https://www.gayaya.restaurant"
+"Betreff","Kurze Idee für Ihren Online-Auftritt – Ga Ya Ya"
+"E-Mail Text","Guten Tag Ga Ya Ya-Team,
 
 ich bin Webdesigner aus Berlin und schaue mir gern an, wie sich lokale Gastronomiebetriebe online präsentieren.
 
@@ -97,7 +145,14 @@ Haben Sie Interesse an einem kostenlosen 15-Minuten-Call? Schreiben Sie mir einf
 
 Herzliche Grüße,
 [DEIN NAME]"
-"Jäger & Lustig","Restaurant","info@jaegerundlustig.de","https://jaegerundlustig.de","Guten Tag Jäger & Lustig-Team,
+"",""
+"━━━ #8 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Jäger & Lustig"
+"Kategorie","Restaurant"
+"E-Mail","info@jaegerundlustig.de"
+"Website","https://jaegerundlustig.de"
+"Betreff","Kurze Idee für Ihren Online-Auftritt – Jäger & Lustig"
+"E-Mail Text","Guten Tag Jäger & Lustig-Team,
 
 ich bin Webdesigner aus Berlin und schaue mir gern an, wie sich lokale Gastronomiebetriebe online präsentieren.
 
@@ -111,7 +166,14 @@ Haben Sie Interesse an einem kostenlosen 15-Minuten-Call? Schreiben Sie mir einf
 
 Herzliche Grüße,
 [DEIN NAME]"
-"3 Schwestern","Restaurant","info@3schwestern.com","https://www.3schwestern.com","Hallo 3 Schwestern-Team,
+"",""
+"━━━ #9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","3 Schwestern"
+"Kategorie","Restaurant"
+"E-Mail","info@3schwestern.com"
+"Website","https://www.3schwestern.com"
+"Betreff","Ihre Website in Berlin – eine kurze Idee von mir"
+"E-Mail Text","Hallo 3 Schwestern-Team,
 
 3 Schwestern ist mir beim Entdecken lokaler Berliner Gastronomiebetriebe aufgefallen – schöner Laden!
 
@@ -123,7 +185,14 @@ Hätten Sie kurz Zeit für ein 15-Minuten-Gespräch? Ich freue mich auf Ihre Ant
 
 Mit freundlichen Grüßen aus Berlin,
 [DEIN NAME]"
-"Chay Village","Restaurant","info@chayvillage.de","https://www.chayvillage.de","Hallo Chay Village-Team,
+"",""
+"━━━ #10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Chay Village"
+"Kategorie","Restaurant"
+"E-Mail","info@chayvillage.de"
+"Website","https://www.chayvillage.de"
+"Betreff","Ihre Website in Berlin – eine kurze Idee von mir"
+"E-Mail Text","Hallo Chay Village-Team,
 
 Chay Village ist mir beim Entdecken lokaler Berliner Gastronomiebetriebe aufgefallen – schöner Laden!
 
@@ -135,7 +204,14 @@ Hätten Sie kurz Zeit für ein 15-Minuten-Gespräch? Ich freue mich auf Ihre Ant
 
 Mit freundlichen Grüßen aus Berlin,
 [DEIN NAME]"
-"Makan Enak","Restaurant","info@anugerah.de","https://makanenak.de","Hallo Makan Enak-Team,
+"",""
+"━━━ #11 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Makan Enak"
+"Kategorie","Restaurant"
+"E-Mail","info@anugerah.de"
+"Website","https://makanenak.de"
+"Betreff","Ihre Website in Berlin – eine kurze Idee von mir"
+"E-Mail Text","Hallo Makan Enak-Team,
 
 Makan Enak ist mir beim Entdecken lokaler Berliner Gastronomiebetriebe aufgefallen – schöner Laden!
 
@@ -147,7 +223,14 @@ Hätten Sie kurz Zeit für ein 15-Minuten-Gespräch? Ich freue mich auf Ihre Ant
 
 Mit freundlichen Grüßen aus Berlin,
 [DEIN NAME]"
-"Malafemmena","Restaurant","info@malafemmena.restaurant","https://malafemmena.restaurant","Hallo Malafemmena-Team,
+"",""
+"━━━ #12 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Malafemmena"
+"Kategorie","Restaurant"
+"E-Mail","info@malafemmena.restaurant"
+"Website","https://malafemmena.restaurant"
+"Betreff","Ihre Website in Berlin – eine kurze Idee von mir"
+"E-Mail Text","Hallo Malafemmena-Team,
 
 Malafemmena ist mir beim Entdecken lokaler Berliner Gastronomiebetriebe aufgefallen – schöner Laden!
 
@@ -159,7 +242,14 @@ Hätten Sie kurz Zeit für ein 15-Minuten-Gespräch? Ich freue mich auf Ihre Ant
 
 Mit freundlichen Grüßen aus Berlin,
 [DEIN NAME]"
-"EINS44","Restaurant","info@eins44.com","https://www.eins44.com","Hallo EINS44-Team,
+"",""
+"━━━ #13 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","EINS44"
+"Kategorie","Restaurant"
+"E-Mail","info@eins44.com"
+"Website","https://www.eins44.com"
+"Betreff","Ihre Website in Berlin – eine kurze Idee von mir"
+"E-Mail Text","Hallo EINS44-Team,
 
 EINS44 ist mir beim Entdecken lokaler Berliner Gastronomiebetriebe aufgefallen – schöner Laden!
 
@@ -171,7 +261,14 @@ Hätten Sie kurz Zeit für ein 15-Minuten-Gespräch? Ich freue mich auf Ihre Ant
 
 Mit freundlichen Grüßen aus Berlin,
 [DEIN NAME]"
-"Burro Unchained","Restaurant","tables@burro-unchained.com","https://www.burro-unchained.com","Hallo Burro Unchained-Team,
+"",""
+"━━━ #14 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Burro Unchained"
+"Kategorie","Restaurant"
+"E-Mail","tables@burro-unchained.com"
+"Website","https://www.burro-unchained.com"
+"Betreff","Ihre Website in Berlin – eine kurze Idee von mir"
+"E-Mail Text","Hallo Burro Unchained-Team,
 
 Burro Unchained ist mir beim Entdecken lokaler Berliner Gastronomiebetriebe aufgefallen – schöner Laden!
 
@@ -183,7 +280,14 @@ Hätten Sie kurz Zeit für ein 15-Minuten-Gespräch? Ich freue mich auf Ihre Ant
 
 Mit freundlichen Grüßen aus Berlin,
 [DEIN NAME]"
-"FREA Bakery","Café","hello@freabakery.de","https://www.freabakery.de","Hallo FREA Bakery-Team,
+"",""
+"━━━ #15 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","FREA Bakery"
+"Kategorie","Café"
+"E-Mail","hello@freabakery.de"
+"Website","https://www.freabakery.de"
+"Betreff","Ihr Café verdient eine schönere Website – FREA Bakery"
+"E-Mail Text","Hallo FREA Bakery-Team,
 
 Ihr Café ist mir beim Stöbern nach Berliner Lieblingsorten aufgefallen – eine wirklich einladende Adresse!
 
@@ -197,7 +301,14 @@ Haben Sie Lust auf ein kurzes 15-Minuten-Gespräch? Einfach auf diese E-Mail ant
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Café Anna Blume","Café","info@cafe-anna-blume.de","https://cafe-anna-blume.de","Hallo Café Anna Blume-Team,
+"",""
+"━━━ #16 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Café Anna Blume"
+"Kategorie","Café"
+"E-Mail","info@cafe-anna-blume.de"
+"Website","https://cafe-anna-blume.de"
+"Betreff","Ihr Café verdient eine schönere Website – Café Anna Blume"
+"E-Mail Text","Hallo Café Anna Blume-Team,
 
 Ihr Café ist mir beim Stöbern nach Berliner Lieblingsorten aufgefallen – eine wirklich einladende Adresse!
 
@@ -211,7 +322,14 @@ Haben Sie Lust auf ein kurzes 15-Minuten-Gespräch? Einfach auf diese E-Mail ant
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Café Chagall","Café","info@cafe-chagall.de","https://www.cafe-chagall.com","Hallo Café Chagall-Team,
+"",""
+"━━━ #17 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Café Chagall"
+"Kategorie","Café"
+"E-Mail","info@cafe-chagall.de"
+"Website","https://www.cafe-chagall.com"
+"Betreff","Ihr Café verdient eine schönere Website – Café Chagall"
+"E-Mail Text","Hallo Café Chagall-Team,
 
 Ihr Café ist mir beim Stöbern nach Berliner Lieblingsorten aufgefallen – eine wirklich einladende Adresse!
 
@@ -225,7 +343,14 @@ Haben Sie Lust auf ein kurzes 15-Minuten-Gespräch? Einfach auf diese E-Mail ant
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Café Liebling","Café","hello@cafeliebling.berlin","https://www.cafeliebling.berlin","Hallo Café Liebling-Team,
+"",""
+"━━━ #18 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Café Liebling"
+"Kategorie","Café"
+"E-Mail","hello@cafeliebling.berlin"
+"Website","https://www.cafeliebling.berlin"
+"Betreff","Ihr Café verdient eine schönere Website – Café Liebling"
+"E-Mail Text","Hallo Café Liebling-Team,
 
 Ihr Café ist mir beim Stöbern nach Berliner Lieblingsorten aufgefallen – eine wirklich einladende Adresse!
 
@@ -239,7 +364,14 @@ Haben Sie Lust auf ein kurzes 15-Minuten-Gespräch? Einfach auf diese E-Mail ant
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Mo's Coffee","Café","info@moscoffee.de","https://www.moscoffee.de","Guten Tag Mo's Coffee-Team,
+"",""
+"━━━ #19 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Mo's Coffee"
+"Kategorie","Café"
+"E-Mail","info@moscoffee.de"
+"Website","https://www.moscoffee.de"
+"Betreff","Guter Kaffee, bessere Website – kurze Idee aus Berlin"
+"E-Mail Text","Guten Tag Mo's Coffee-Team,
 
 guter Kaffee verdient einen großartigen Auftritt – online wie offline.
 
@@ -251,7 +383,14 @@ Interesse an einem kurzen 15-Minuten-Call? Schreiben Sie mir einfach!
 
 Viele Grüße,
 [DEIN NAME]"
-"KAFFEE.BAR","Café","info@kaffeebar.berlin","https://www.kaffeebar.berlin","Guten Tag KAFFEE.BAR-Team,
+"",""
+"━━━ #20 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","KAFFEE.BAR"
+"Kategorie","Café"
+"E-Mail","info@kaffeebar.berlin"
+"Website","https://www.kaffeebar.berlin"
+"Betreff","Guter Kaffee, bessere Website – kurze Idee aus Berlin"
+"E-Mail Text","Guten Tag KAFFEE.BAR-Team,
 
 guter Kaffee verdient einen großartigen Auftritt – online wie offline.
 
@@ -263,7 +402,14 @@ Interesse an einem kurzen 15-Minuten-Call? Schreiben Sie mir einfach!
 
 Viele Grüße,
 [DEIN NAME]"
-"Café Krone","Café","cafekroneberlin@gmail.com","https://www.krone-berlin.com","Guten Tag Café Krone-Team,
+"",""
+"━━━ #21 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Café Krone"
+"Kategorie","Café"
+"E-Mail","cafekroneberlin@gmail.com"
+"Website","https://www.krone-berlin.com"
+"Betreff","Guter Kaffee, bessere Website – kurze Idee aus Berlin"
+"E-Mail Text","Guten Tag Café Krone-Team,
 
 guter Kaffee verdient einen großartigen Auftritt – online wie offline.
 
@@ -275,7 +421,14 @@ Interesse an einem kurzen 15-Minuten-Call? Schreiben Sie mir einfach!
 
 Viele Grüße,
 [DEIN NAME]"
-"Café Tiergarten","Café","mail@cafetiergarten.berlin","https://cafetiergarten.berlin","Guten Tag Café Tiergarten-Team,
+"",""
+"━━━ #22 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Café Tiergarten"
+"Kategorie","Café"
+"E-Mail","mail@cafetiergarten.berlin"
+"Website","https://cafetiergarten.berlin"
+"Betreff","Guter Kaffee, bessere Website – kurze Idee aus Berlin"
+"E-Mail Text","Guten Tag Café Tiergarten-Team,
 
 guter Kaffee verdient einen großartigen Auftritt – online wie offline.
 
@@ -287,7 +440,14 @@ Interesse an einem kurzen 15-Minuten-Call? Schreiben Sie mir einfach!
 
 Viele Grüße,
 [DEIN NAME]"
-"Café Berio","Café","post@berio-berlin.de","https://berio-berlin.de","Hallo Café Berio-Team,
+"",""
+"━━━ #23 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Café Berio"
+"Kategorie","Café"
+"E-Mail","post@berio-berlin.de"
+"Website","https://berio-berlin.de"
+"Betreff","Mehr Gäste für Café Berio – Idee aus Berlin"
+"E-Mail Text","Hallo Café Berio-Team,
 
 Ihr Café hier in Berlin hat mich beim Recherchieren angesprochen – schöne Atmosphäre!
 
@@ -299,7 +459,14 @@ Kurzes 15-Minuten-Gespräch? Einfach antworten!
 
 Mit freundlichen Grüßen aus Berlin,
 [DEIN NAME]"
-"Saaldeck Café & Bar","Café","mail@saaldeck.de","https://www.saaldeck.de","Hallo Saaldeck Café & Bar-Team,
+"",""
+"━━━ #24 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Saaldeck Café & Bar"
+"Kategorie","Café"
+"E-Mail","mail@saaldeck.de"
+"Website","https://www.saaldeck.de"
+"Betreff","Mehr Gäste für Saaldeck Café & Bar – Idee aus Berlin"
+"E-Mail Text","Hallo Saaldeck Café & Bar-Team,
 
 Ihr Café hier in Berlin hat mich beim Recherchieren angesprochen – schöne Atmosphäre!
 
@@ -311,7 +478,14 @@ Kurzes 15-Minuten-Gespräch? Einfach antworten!
 
 Mit freundlichen Grüßen aus Berlin,
 [DEIN NAME]"
-"Blume an der Hasenheide","Café","post@blumeberlin.de","https://blumeberlin.de","Hallo Blume an der Hasenheide-Team,
+"",""
+"━━━ #25 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Blume an der Hasenheide"
+"Kategorie","Café"
+"E-Mail","post@blumeberlin.de"
+"Website","https://blumeberlin.de"
+"Betreff","Mehr Gäste für Blume an der Hasenheide – Idee aus Berlin"
+"E-Mail Text","Hallo Blume an der Hasenheide-Team,
 
 Ihr Café hier in Berlin hat mich beim Recherchieren angesprochen – schöne Atmosphäre!
 
@@ -323,7 +497,14 @@ Kurzes 15-Minuten-Gespräch? Einfach antworten!
 
 Mit freundlichen Grüßen aus Berlin,
 [DEIN NAME]"
-"Blumental","Café","reservierungen@blumental-berlin.de","https://blumental-berlin.de","Hallo Blumental-Team,
+"",""
+"━━━ #26 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Blumental"
+"Kategorie","Café"
+"E-Mail","reservierungen@blumental-berlin.de"
+"Website","https://blumental-berlin.de"
+"Betreff","Mehr Gäste für Blumental – Idee aus Berlin"
+"E-Mail Text","Hallo Blumental-Team,
 
 Ihr Café hier in Berlin hat mich beim Recherchieren angesprochen – schöne Atmosphäre!
 
@@ -335,7 +516,14 @@ Kurzes 15-Minuten-Gespräch? Einfach antworten!
 
 Mit freundlichen Grüßen aus Berlin,
 [DEIN NAME]"
-"em-style","Friseursalon","kontakt@em-style.de","https://www.em-style.de","Hallo em-style-Team,
+"",""
+"━━━ #27 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","em-style"
+"Kategorie","Friseursalon"
+"E-Mail","kontakt@em-style.de"
+"Website","https://www.em-style.de"
+"Betreff","Online-Terminbuchung & frisches Design für Euren Salon"
+"E-Mail Text","Hallo em-style-Team,
 
 Euer Salon ist mir beim Recherchieren aufgefallen – tolles Handwerk!
 
@@ -347,7 +535,14 @@ Habt Ihr kurz Zeit für ein 15-Minuten-Gespräch? Antwortet einfach auf diese Ma
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"YAO Berlin","Friseursalon","info@yao-berlin.de","https://www.yao-berlin.de","Hallo YAO Berlin-Team,
+"",""
+"━━━ #28 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","YAO Berlin"
+"Kategorie","Friseursalon"
+"E-Mail","info@yao-berlin.de"
+"Website","https://www.yao-berlin.de"
+"Betreff","Online-Terminbuchung & frisches Design für Euren Salon"
+"E-Mail Text","Hallo YAO Berlin-Team,
 
 Euer Salon ist mir beim Recherchieren aufgefallen – tolles Handwerk!
 
@@ -359,7 +554,14 @@ Habt Ihr kurz Zeit für ein 15-Minuten-Gespräch? Antwortet einfach auf diese Ma
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Kleinod Salon","Friseursalon","mail@kleinod-salon.de","https://www.kleinod-salon.de","Hallo Kleinod Salon-Team,
+"",""
+"━━━ #29 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Kleinod Salon"
+"Kategorie","Friseursalon"
+"E-Mail","mail@kleinod-salon.de"
+"Website","https://www.kleinod-salon.de"
+"Betreff","Online-Terminbuchung & frisches Design für Euren Salon"
+"E-Mail Text","Hallo Kleinod Salon-Team,
 
 Euer Salon ist mir beim Recherchieren aufgefallen – tolles Handwerk!
 
@@ -371,7 +573,14 @@ Habt Ihr kurz Zeit für ein 15-Minuten-Gespräch? Antwortet einfach auf diese Ma
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"FON Friseur Berlin","Friseursalon","info@fon-friseur.de","https://www.fon-friseur.de","Hallo FON Friseur Berlin-Team,
+"",""
+"━━━ #30 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","FON Friseur Berlin"
+"Kategorie","Friseursalon"
+"E-Mail","info@fon-friseur.de"
+"Website","https://www.fon-friseur.de"
+"Betreff","Online-Terminbuchung & frisches Design für Euren Salon"
+"E-Mail Text","Hallo FON Friseur Berlin-Team,
 
 Euer Salon ist mir beim Recherchieren aufgefallen – tolles Handwerk!
 
@@ -383,7 +592,14 @@ Habt Ihr kurz Zeit für ein 15-Minuten-Gespräch? Antwortet einfach auf diese Ma
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Haarmacher","Friseursalon","team@haarmacher.com","https://www.haarmacher.com","Hallo Haarmacher-Team,
+"",""
+"━━━ #31 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Haarmacher"
+"Kategorie","Friseursalon"
+"E-Mail","team@haarmacher.com"
+"Website","https://www.haarmacher.com"
+"Betreff","Online-Terminbuchung & frisches Design für Euren Salon"
+"E-Mail Text","Hallo Haarmacher-Team,
 
 Euer Salon ist mir beim Recherchieren aufgefallen – tolles Handwerk!
 
@@ -395,7 +611,14 @@ Habt Ihr kurz Zeit für ein 15-Minuten-Gespräch? Antwortet einfach auf diese Ma
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Art Cut","Friseursalon","info@artcut.eu","https://www.artcut.eu","Guten Tag Art Cut-Team,
+"",""
+"━━━ #32 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Art Cut"
+"Kategorie","Friseursalon"
+"E-Mail","info@artcut.eu"
+"Website","https://www.artcut.eu"
+"Betreff","Kurze Frage zu Ihrer Friseur-Website – Art Cut"
+"E-Mail Text","Guten Tag Art Cut-Team,
 
 als Webdesigner aus Berlin schaue ich mir regelmäßig Friseur-Websites an – dabei bin ich auf Sie aufmerksam geworden.
 
@@ -407,7 +630,14 @@ Kurzes 15-Minuten-Gespräch? Einfach auf diese E-Mail antworten!
 
 Mit freundlichen Grüßen,
 [DEIN NAME]"
-"Friseur Kristallglanz","Friseursalon","info@kristallglanz.com","https://www.kristallglanz.com","Guten Tag Friseur Kristallglanz-Team,
+"",""
+"━━━ #33 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Friseur Kristallglanz"
+"Kategorie","Friseursalon"
+"E-Mail","info@kristallglanz.com"
+"Website","https://www.kristallglanz.com"
+"Betreff","Kurze Frage zu Ihrer Friseur-Website – Friseur Kristallglanz"
+"E-Mail Text","Guten Tag Friseur Kristallglanz-Team,
 
 als Webdesigner aus Berlin schaue ich mir regelmäßig Friseur-Websites an – dabei bin ich auf Sie aufmerksam geworden.
 
@@ -419,7 +649,14 @@ Kurzes 15-Minuten-Gespräch? Einfach auf diese E-Mail antworten!
 
 Mit freundlichen Grüßen,
 [DEIN NAME]"
-"van Baal Friseure","Friseursalon","info@van-baal-friseure.de","https://www.van-baal-friseure.de","Guten Tag van Baal Friseure-Team,
+"",""
+"━━━ #34 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","van Baal Friseure"
+"Kategorie","Friseursalon"
+"E-Mail","info@van-baal-friseure.de"
+"Website","https://www.van-baal-friseure.de"
+"Betreff","Kurze Frage zu Ihrer Friseur-Website – van Baal Friseure"
+"E-Mail Text","Guten Tag van Baal Friseure-Team,
 
 als Webdesigner aus Berlin schaue ich mir regelmäßig Friseur-Websites an – dabei bin ich auf Sie aufmerksam geworden.
 
@@ -431,7 +668,14 @@ Kurzes 15-Minuten-Gespräch? Einfach auf diese E-Mail antworten!
 
 Mit freundlichen Grüßen,
 [DEIN NAME]"
-"Friseur Kopfkultur","Friseursalon","info@friseurkopfkultur-berlin.de","https://www.friseurkopfkultur-berlin.de","Guten Tag Friseur Kopfkultur-Team,
+"",""
+"━━━ #35 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Friseur Kopfkultur"
+"Kategorie","Friseursalon"
+"E-Mail","info@friseurkopfkultur-berlin.de"
+"Website","https://www.friseurkopfkultur-berlin.de"
+"Betreff","Kurze Frage zu Ihrer Friseur-Website – Friseur Kopfkultur"
+"E-Mail Text","Guten Tag Friseur Kopfkultur-Team,
 
 als Webdesigner aus Berlin schaue ich mir regelmäßig Friseur-Websites an – dabei bin ich auf Sie aufmerksam geworden.
 
@@ -443,7 +687,14 @@ Kurzes 15-Minuten-Gespräch? Einfach auf diese E-Mail antworten!
 
 Mit freundlichen Grüßen,
 [DEIN NAME]"
-"HARMS Friseure Berlin","Friseursalon","info@harms-friseure-berlin.de","https://www.harms-friseure-berlin.de","Guten Tag HARMS Friseure Berlin-Team,
+"",""
+"━━━ #36 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","HARMS Friseure Berlin"
+"Kategorie","Friseursalon"
+"E-Mail","info@harms-friseure-berlin.de"
+"Website","https://www.harms-friseure-berlin.de"
+"Betreff","Kurze Frage zu Ihrer Friseur-Website – HARMS Friseure Berlin"
+"E-Mail Text","Guten Tag HARMS Friseure Berlin-Team,
 
 als Webdesigner aus Berlin schaue ich mir regelmäßig Friseur-Websites an – dabei bin ich auf Sie aufmerksam geworden.
 
@@ -455,7 +706,14 @@ Kurzes 15-Minuten-Gespräch? Einfach auf diese E-Mail antworten!
 
 Mit freundlichen Grüßen,
 [DEIN NAME]"
-"Goldcut Friseure Weißensee","Friseursalon","info@goldcut-friseure.de","https://goldcut-friseure-weissensee.de","Hallo Goldcut Friseure Weißensee-Team,
+"",""
+"━━━ #37 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Goldcut Friseure Weißensee"
+"Kategorie","Friseursalon"
+"E-Mail","info@goldcut-friseure.de"
+"Website","https://goldcut-friseure-weissensee.de"
+"Betreff","Mehr Neukunden durch eine modernere Website"
+"E-Mail Text","Hallo Goldcut Friseure Weißensee-Team,
 
 Ihr Friseurladen in Berlin hat mich beim Recherchieren überzeugt – schöner Salon!
 
@@ -467,7 +725,14 @@ Ich würde mich über ein 15-Minuten-Gespräch freuen – einfach antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Haarstudio Yvonne","Friseursalon","info@haarstudio-yvonne.de","https://haarstudioyvonne.de","Hallo Haarstudio Yvonne-Team,
+"",""
+"━━━ #38 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Haarstudio Yvonne"
+"Kategorie","Friseursalon"
+"E-Mail","info@haarstudio-yvonne.de"
+"Website","https://haarstudioyvonne.de"
+"Betreff","Mehr Neukunden durch eine modernere Website"
+"E-Mail Text","Hallo Haarstudio Yvonne-Team,
 
 Ihr Friseurladen in Berlin hat mich beim Recherchieren überzeugt – schöner Salon!
 
@@ -479,7 +744,14 @@ Ich würde mich über ein 15-Minuten-Gespräch freuen – einfach antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Unique Friseursalon","Friseursalon","info@unique-friseur.de","http://www.unique-friseur.de","Hallo Unique Friseursalon-Team,
+"",""
+"━━━ #39 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Unique Friseursalon"
+"Kategorie","Friseursalon"
+"E-Mail","info@unique-friseur.de"
+"Website","http://www.unique-friseur.de"
+"Betreff","Mehr Neukunden durch eine modernere Website"
+"E-Mail Text","Hallo Unique Friseursalon-Team,
 
 Ihr Friseurladen in Berlin hat mich beim Recherchieren überzeugt – schöner Salon!
 
@@ -491,7 +763,14 @@ Ich würde mich über ein 15-Minuten-Gespräch freuen – einfach antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Barbabella Berlin","Barbershop","manoman@barbabella.berlin","https://barbabella.berlin","Hey Barbabella Berlin-Team,
+"",""
+"━━━ #40 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Barbabella Berlin"
+"Kategorie","Barbershop"
+"E-Mail","manoman@barbabella.berlin"
+"Website","https://barbabella.berlin"
+"Betreff","Freshe Website für euren Barbershop?"
+"E-Mail Text","Hey Barbabella Berlin-Team,
 
 euer Barbershop in Berlin ist mir aufgefallen – cooler Laden!
 
@@ -505,7 +784,14 @@ Bock auf einen kurzen 15-Minuten-Call? Schreibt mir einfach zurück!
 
 Grüße aus Berlin,
 [DEIN NAME]"
-"Barber Studio","Barbershop","info@barber.studio","https://barber.studio","Hey Barber Studio-Team,
+"",""
+"━━━ #41 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Barber Studio"
+"Kategorie","Barbershop"
+"E-Mail","info@barber.studio"
+"Website","https://barber.studio"
+"Betreff","Freshe Website für euren Barbershop?"
+"E-Mail Text","Hey Barber Studio-Team,
 
 euer Barbershop in Berlin ist mir aufgefallen – cooler Laden!
 
@@ -519,7 +805,14 @@ Bock auf einen kurzen 15-Minuten-Call? Schreibt mir einfach zurück!
 
 Grüße aus Berlin,
 [DEIN NAME]"
-"BARBERLIN","Barbershop","info@barberlin.co","https://barberlin.co","Hey BARBERLIN-Team,
+"",""
+"━━━ #42 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","BARBERLIN"
+"Kategorie","Barbershop"
+"E-Mail","info@barberlin.co"
+"Website","https://barberlin.co"
+"Betreff","Freshe Website für euren Barbershop?"
+"E-Mail Text","Hey BARBERLIN-Team,
 
 euer Barbershop in Berlin ist mir aufgefallen – cooler Laden!
 
@@ -533,7 +826,14 @@ Bock auf einen kurzen 15-Minuten-Call? Schreibt mir einfach zurück!
 
 Grüße aus Berlin,
 [DEIN NAME]"
-"ROWDY Barbershop","Barbershop","info@gertrac.de","https://www.rowdy-barber.de","Hey ROWDY Barbershop-Team,
+"",""
+"━━━ #43 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","ROWDY Barbershop"
+"Kategorie","Barbershop"
+"E-Mail","info@gertrac.de"
+"Website","https://www.rowdy-barber.de"
+"Betreff","Freshe Website für euren Barbershop?"
+"E-Mail Text","Hey ROWDY Barbershop-Team,
 
 euer Barbershop in Berlin ist mir aufgefallen – cooler Laden!
 
@@ -547,7 +847,14 @@ Bock auf einen kurzen 15-Minuten-Call? Schreibt mir einfach zurück!
 
 Grüße aus Berlin,
 [DEIN NAME]"
-"Barbers Berlin","Barbershop","info@berlin-barbers.com","https://berlin-barbers.com","Hallo Barbers Berlin-Team,
+"",""
+"━━━ #44 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Barbers Berlin"
+"Kategorie","Barbershop"
+"E-Mail","info@berlin-barbers.com"
+"Website","https://berlin-barbers.com"
+"Betreff","Moderner Online-Auftritt für Barbers Berlin"
+"E-Mail Text","Hallo Barbers Berlin-Team,
 
 ich bin Webdesigner aus Berlin und spezialisiere mich auf lokale Geschäfte – dabei bin ich auf euren Barbershop gestoßen.
 
@@ -559,7 +866,14 @@ Habt ihr Zeit für einen 15-Minuten-Call? Einfach auf diese E-Mail antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Barber Shop Berlin","Barbershop","vahel77@live.de","https://www.barber-shop-berlin.de","Hallo Barber Shop Berlin-Team,
+"",""
+"━━━ #45 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Barber Shop Berlin"
+"Kategorie","Barbershop"
+"E-Mail","vahel77@live.de"
+"Website","https://www.barber-shop-berlin.de"
+"Betreff","Moderner Online-Auftritt für Barber Shop Berlin"
+"E-Mail Text","Hallo Barber Shop Berlin-Team,
 
 ich bin Webdesigner aus Berlin und spezialisiere mich auf lokale Geschäfte – dabei bin ich auf euren Barbershop gestoßen.
 
@@ -571,7 +885,14 @@ Habt ihr Zeit für einen 15-Minuten-Call? Einfach auf diese E-Mail antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Brothers Barbershop Berlin","Barbershop","brothers.barbershop.berlin@gmail.com","https://brothers-barbershop-berlin.business.site","Hallo Brothers Barbershop Berlin-Team,
+"",""
+"━━━ #46 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Brothers Barbershop Berlin"
+"Kategorie","Barbershop"
+"E-Mail","brothers.barbershop.berlin@gmail.com"
+"Website","https://brothers-barbershop-berlin.business.site"
+"Betreff","Moderner Online-Auftritt für Brothers Barbershop Berlin"
+"E-Mail Text","Hallo Brothers Barbershop Berlin-Team,
 
 ich bin Webdesigner aus Berlin und spezialisiere mich auf lokale Geschäfte – dabei bin ich auf euren Barbershop gestoßen.
 
@@ -583,7 +904,14 @@ Habt ihr Zeit für einen 15-Minuten-Call? Einfach auf diese E-Mail antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Barber Who Berlin","Barbershop","barberwhoberlin@gmail.com","https://barberwhoberlin.nearcut.de","Hallo Barber Who Berlin-Team,
+"",""
+"━━━ #47 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Barber Who Berlin"
+"Kategorie","Barbershop"
+"E-Mail","barberwhoberlin@gmail.com"
+"Website","https://barberwhoberlin.nearcut.de"
+"Betreff","Moderner Online-Auftritt für Barber Who Berlin"
+"E-Mail Text","Hallo Barber Who Berlin-Team,
 
 ich bin Webdesigner aus Berlin und spezialisiere mich auf lokale Geschäfte – dabei bin ich auf euren Barbershop gestoßen.
 
@@ -595,7 +923,14 @@ Habt ihr Zeit für einen 15-Minuten-Call? Einfach auf diese E-Mail antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Ofelia Berlin","Boutique","ofeliaberlin@gmx.net","http://www.ofelia-berlin.de","Hallo Ofelia Berlin-Team,
+"",""
+"━━━ #48 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Ofelia Berlin"
+"Kategorie","Boutique"
+"E-Mail","ofeliaberlin@gmx.net"
+"Website","http://www.ofelia-berlin.de"
+"Betreff","Eure Boutique, noch stylischer online"
+"E-Mail Text","Hallo Ofelia Berlin-Team,
 
 Eure Boutique in Berlin ist mir aufgefallen – schöne Auswahl und tolles Konzept!
 
@@ -609,7 +944,14 @@ Hätte ich kurz Euer Ohr für 15 Minuten? Antwortet einfach auf diese Mail!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Per Donna","Boutique","info@perdonna-berlin.de","https://www.perdonna-berlin.de","Hallo Per Donna-Team,
+"",""
+"━━━ #49 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Per Donna"
+"Kategorie","Boutique"
+"E-Mail","info@perdonna-berlin.de"
+"Website","https://www.perdonna-berlin.de"
+"Betreff","Eure Boutique, noch stylischer online"
+"E-Mail Text","Hallo Per Donna-Team,
 
 Eure Boutique in Berlin ist mir aufgefallen – schöne Auswahl und tolles Konzept!
 
@@ -623,7 +965,14 @@ Hätte ich kurz Euer Ohr für 15 Minuten? Antwortet einfach auf diese Mail!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"MOOI Berlin","Boutique","hallo@mooiberlin.com","https://mooiberlin.com","Hallo MOOI Berlin-Team,
+"",""
+"━━━ #50 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","MOOI Berlin"
+"Kategorie","Boutique"
+"E-Mail","hallo@mooiberlin.com"
+"Website","https://mooiberlin.com"
+"Betreff","Eure Boutique, noch stylischer online"
+"E-Mail Text","Hallo MOOI Berlin-Team,
 
 Eure Boutique in Berlin ist mir aufgefallen – schöne Auswahl und tolles Konzept!
 
@@ -637,7 +986,14 @@ Hätte ich kurz Euer Ohr für 15 Minuten? Antwortet einfach auf diese Mail!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"NOVeL Concept Store","Boutique","info@novelberlin.de","https://www.novelberlin.de","Guten Tag NOVeL Concept Store-Team,
+"",""
+"━━━ #51 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","NOVeL Concept Store"
+"Kategorie","Boutique"
+"E-Mail","info@novelberlin.de"
+"Website","https://www.novelberlin.de"
+"Betreff","Kurze Idee für Ihren Boutique-Auftritt – NOVeL Concept Store"
+"E-Mail Text","Guten Tag NOVeL Concept Store-Team,
 
 gute Mode verdient eine gute Website – das ist meine Überzeugung als Berliner Webdesigner.
 
@@ -649,7 +1005,14 @@ Interesse an einem 15-Minuten-Gespräch? Einfach antworten!
 
 Mit freundlichen Grüßen,
 [DEIN NAME]"
-"Image Modeboutique","Boutique","mail@image-modeboutique.de","https://image-modeboutique.de","Guten Tag Image Modeboutique-Team,
+"",""
+"━━━ #52 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Image Modeboutique"
+"Kategorie","Boutique"
+"E-Mail","mail@image-modeboutique.de"
+"Website","https://image-modeboutique.de"
+"Betreff","Kurze Idee für Ihren Boutique-Auftritt – Image Modeboutique"
+"E-Mail Text","Guten Tag Image Modeboutique-Team,
 
 gute Mode verdient eine gute Website – das ist meine Überzeugung als Berliner Webdesigner.
 
@@ -661,7 +1024,14 @@ Interesse an einem 15-Minuten-Gespräch? Einfach antworten!
 
 Mit freundlichen Grüßen,
 [DEIN NAME]"
-"MK-Mode","Boutique","info@mk-mode.de","https://www.mk-mode.de","Guten Tag MK-Mode-Team,
+"",""
+"━━━ #53 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","MK-Mode"
+"Kategorie","Boutique"
+"E-Mail","info@mk-mode.de"
+"Website","https://www.mk-mode.de"
+"Betreff","Kurze Idee für Ihren Boutique-Auftritt – MK-Mode"
+"E-Mail Text","Guten Tag MK-Mode-Team,
 
 gute Mode verdient eine gute Website – das ist meine Überzeugung als Berliner Webdesigner.
 
@@ -673,7 +1043,14 @@ Interesse an einem 15-Minuten-Gespräch? Einfach antworten!
 
 Mit freundlichen Grüßen,
 [DEIN NAME]"
-"Broke + Schön","Boutique","hello@brokeberlin.de","https://brokeundschoen.de","Guten Tag Broke + Schön-Team,
+"",""
+"━━━ #54 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Broke + Schön"
+"Kategorie","Boutique"
+"E-Mail","hello@brokeberlin.de"
+"Website","https://brokeundschoen.de"
+"Betreff","Kurze Idee für Ihren Boutique-Auftritt – Broke + Schön"
+"E-Mail Text","Guten Tag Broke + Schön-Team,
 
 gute Mode verdient eine gute Website – das ist meine Überzeugung als Berliner Webdesigner.
 
@@ -685,7 +1062,14 @@ Interesse an einem 15-Minuten-Gespräch? Einfach antworten!
 
 Mit freundlichen Grüßen,
 [DEIN NAME]"
-"CrossFit Icke","Fitnessstudio","kontakt@crossfiticke.com","https://www.crossfiticke.com","Hallo CrossFit Icke-Team,
+"",""
+"━━━ #55 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","CrossFit Icke"
+"Kategorie","Fitnessstudio"
+"E-Mail","kontakt@crossfiticke.com"
+"Website","https://www.crossfiticke.com"
+"Betreff","Neue Mitglieder durch eine moderne Studio-Website"
+"E-Mail Text","Hallo CrossFit Icke-Team,
 
 Euer Studio in Berlin macht einen starken Eindruck – genau das suchen Sportbegeisterte in der Stadt!
 
@@ -697,7 +1081,14 @@ Kurzes 15-Minuten-Gespräch? Schreibt mir einfach!
 
 Sportliche Grüße aus Berlin,
 [DEIN NAME]"
-"Green Gym Berlin","Fitnessstudio","info@greengymberlin.de","https://www.greengymberlin.de","Hallo Green Gym Berlin-Team,
+"",""
+"━━━ #56 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Green Gym Berlin"
+"Kategorie","Fitnessstudio"
+"E-Mail","info@greengymberlin.de"
+"Website","https://www.greengymberlin.de"
+"Betreff","Neue Mitglieder durch eine moderne Studio-Website"
+"E-Mail Text","Hallo Green Gym Berlin-Team,
 
 Euer Studio in Berlin macht einen starken Eindruck – genau das suchen Sportbegeisterte in der Stadt!
 
@@ -709,7 +1100,14 @@ Kurzes 15-Minuten-Gespräch? Schreibt mir einfach!
 
 Sportliche Grüße aus Berlin,
 [DEIN NAME]"
-"MAKEDA Pilates Studio","Pilates Studio","info@makeda-pilates.de","https://www.makeda-pilates.de","Hallo MAKEDA Pilates Studio-Team,
+"",""
+"━━━ #57 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","MAKEDA Pilates Studio"
+"Kategorie","Pilates Studio"
+"E-Mail","info@makeda-pilates.de"
+"Website","https://www.makeda-pilates.de"
+"Betreff","Neue Mitglieder durch eine moderne Studio-Website"
+"E-Mail Text","Hallo MAKEDA Pilates Studio-Team,
 
 Euer Studio in Berlin macht einen starken Eindruck – genau das suchen Sportbegeisterte in der Stadt!
 
@@ -721,7 +1119,14 @@ Kurzes 15-Minuten-Gespräch? Schreibt mir einfach!
 
 Sportliche Grüße aus Berlin,
 [DEIN NAME]"
-"Berlin Pilates Studio","Pilates Studio","info@berlinpilatesstudio.com","https://berlinpilatesstudio.com","Hallo Berlin Pilates Studio-Team,
+"",""
+"━━━ #58 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Berlin Pilates Studio"
+"Kategorie","Pilates Studio"
+"E-Mail","info@berlinpilatesstudio.com"
+"Website","https://berlinpilatesstudio.com"
+"Betreff","Mehr Kursteilnehmer für Berlin Pilates Studio – kurze Idee"
+"E-Mail Text","Hallo Berlin Pilates Studio-Team,
 
 Euer Studio in Berlin ist mir beim Recherchieren aufgefallen – eine tolle Adresse!
 
@@ -733,7 +1138,14 @@ Interesse an einem 15-Minuten-Gespräch? Einfach antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Peace Yoga Berlin","Yoga Studio","info@peaceyoga.de","https://peaceyoga.de","Hallo Peace Yoga Berlin-Team,
+"",""
+"━━━ #59 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Peace Yoga Berlin"
+"Kategorie","Yoga Studio"
+"E-Mail","info@peaceyoga.de"
+"Website","https://peaceyoga.de"
+"Betreff","Mehr Kursteilnehmer für Peace Yoga Berlin – kurze Idee"
+"E-Mail Text","Hallo Peace Yoga Berlin-Team,
 
 Euer Studio in Berlin ist mir beim Recherchieren aufgefallen – eine tolle Adresse!
 
@@ -745,7 +1157,14 @@ Interesse an einem 15-Minuten-Gespräch? Einfach antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Kreuzberg Yoga","Yoga Studio","info@kreuzbergyoga.de","https://www.kreuzbergyoga.de","Hallo Kreuzberg Yoga-Team,
+"",""
+"━━━ #60 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Kreuzberg Yoga"
+"Kategorie","Yoga Studio"
+"E-Mail","info@kreuzbergyoga.de"
+"Website","https://www.kreuzbergyoga.de"
+"Betreff","Mehr Kursteilnehmer für Kreuzberg Yoga – kurze Idee"
+"E-Mail Text","Hallo Kreuzberg Yoga-Team,
 
 Euer Studio in Berlin ist mir beim Recherchieren aufgefallen – eine tolle Adresse!
 
@@ -757,7 +1176,14 @@ Interesse an einem 15-Minuten-Gespräch? Einfach antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Andreas Heumann Personal Training","Personal Trainer","andreas@heumann-personaltraining.berlin","https://heumann-personaltraining.berlin","Hallo Andreas Heumann Personal Training,
+"",""
+"━━━ #61 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Andreas Heumann Personal Training"
+"Kategorie","Personal Trainer"
+"E-Mail","andreas@heumann-personaltraining.berlin"
+"Website","https://heumann-personaltraining.berlin"
+"Betreff","Mehr Klienten durch einen professionellen Webauftritt"
+"E-Mail Text","Hallo Andreas Heumann Personal Training,
 
 als Personal Trainer in Berlin lebt man von Empfehlungen – aber auch von der Online-Sichtbarkeit.
 
@@ -769,7 +1195,14 @@ Hätten Sie Interesse an einem kurzen 15-Minuten-Gespräch? Einfach auf diese E-
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Sportsfreund Grüner","Personal Trainer","kontakt@sportsfreund-berlin.de","https://www.sportsfreund-berlin.de","Hallo Sportsfreund Grüner,
+"",""
+"━━━ #62 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Sportsfreund Grüner"
+"Kategorie","Personal Trainer"
+"E-Mail","kontakt@sportsfreund-berlin.de"
+"Website","https://www.sportsfreund-berlin.de"
+"Betreff","Mehr Klienten durch einen professionellen Webauftritt"
+"E-Mail Text","Hallo Sportsfreund Grüner,
 
 als Personal Trainer in Berlin lebt man von Empfehlungen – aber auch von der Online-Sichtbarkeit.
 
@@ -781,7 +1214,14 @@ Hätten Sie Interesse an einem kurzen 15-Minuten-Gespräch? Einfach auf diese E-
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Berlin Personal Training","Personal Trainer","info@berlin-personal-training.de","https://www.berlin-personal-training.de","Hallo Berlin Personal Training,
+"",""
+"━━━ #63 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Berlin Personal Training"
+"Kategorie","Personal Trainer"
+"E-Mail","info@berlin-personal-training.de"
+"Website","https://www.berlin-personal-training.de"
+"Betreff","Mehr Klienten durch einen professionellen Webauftritt"
+"E-Mail Text","Hallo Berlin Personal Training,
 
 als Personal Trainer in Berlin lebt man von Empfehlungen – aber auch von der Online-Sichtbarkeit.
 
@@ -793,7 +1233,14 @@ Hätten Sie Interesse an einem kurzen 15-Minuten-Gespräch? Einfach auf diese E-
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Beauty Nails Charlottenburg","Nagelstudio","beautynails80@gmail.com","https://beautynailscharlottenburg.de","Hallo Beauty Nails Charlottenburg-Team,
+"",""
+"━━━ #64 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Beauty Nails Charlottenburg"
+"Kategorie","Nagelstudio"
+"E-Mail","beautynails80@gmail.com"
+"Website","https://beautynailscharlottenburg.de"
+"Betreff","Terminbuchung & moderne Website für euer Nagelstudio"
+"E-Mail Text","Hallo Beauty Nails Charlottenburg-Team,
 
 Euer Nagelstudio in Berlin ist mir aufgefallen – tolle Arbeit!
 
@@ -805,7 +1252,14 @@ Kurzes 15-Minuten-Gespräch? Einfach auf diese E-Mail antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Angel Nails Berlin","Nagelstudio","info@angelnailsonline.de","https://angelnailsonline.de","Hallo Angel Nails Berlin-Team,
+"",""
+"━━━ #65 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Angel Nails Berlin"
+"Kategorie","Nagelstudio"
+"E-Mail","info@angelnailsonline.de"
+"Website","https://angelnailsonline.de"
+"Betreff","Terminbuchung & moderne Website für euer Nagelstudio"
+"E-Mail Text","Hallo Angel Nails Berlin-Team,
 
 Euer Nagelstudio in Berlin ist mir aufgefallen – tolle Arbeit!
 
@@ -817,7 +1271,14 @@ Kurzes 15-Minuten-Gespräch? Einfach auf diese E-Mail antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Hauptstadt Nails","Nagelstudio","info@hauptstadt-nails.de","https://hauptstadt-nails.de","Hallo Hauptstadt Nails-Team,
+"",""
+"━━━ #66 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Hauptstadt Nails"
+"Kategorie","Nagelstudio"
+"E-Mail","info@hauptstadt-nails.de"
+"Website","https://hauptstadt-nails.de"
+"Betreff","Terminbuchung & moderne Website für euer Nagelstudio"
+"E-Mail Text","Hallo Hauptstadt Nails-Team,
 
 Euer Nagelstudio in Berlin ist mir aufgefallen – tolle Arbeit!
 
@@ -829,7 +1290,14 @@ Kurzes 15-Minuten-Gespräch? Einfach auf diese E-Mail antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Thanh Dat Nagelstudio","Nagelstudio","info@thanhdat-nagelstudio.de","https://www.thanhdat-nagelstudio.de","Hallo Thanh Dat Nagelstudio-Team,
+"",""
+"━━━ #67 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Thanh Dat Nagelstudio"
+"Kategorie","Nagelstudio"
+"E-Mail","info@thanhdat-nagelstudio.de"
+"Website","https://www.thanhdat-nagelstudio.de"
+"Betreff","Terminbuchung & moderne Website für euer Nagelstudio"
+"E-Mail Text","Hallo Thanh Dat Nagelstudio-Team,
 
 Euer Nagelstudio in Berlin ist mir aufgefallen – tolle Arbeit!
 
@@ -841,7 +1309,14 @@ Kurzes 15-Minuten-Gespräch? Einfach auf diese E-Mail antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Nuclearabbit Tattoo Studio","Tattoo Studio","nuclearabbit.studio@gmail.com","https://www.nuclearabbit.com","Hey Nuclearabbit Tattoo Studio-Team,
+"",""
+"━━━ #68 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Nuclearabbit Tattoo Studio"
+"Kategorie","Tattoo Studio"
+"E-Mail","nuclearabbit.studio@gmail.com"
+"Website","https://www.nuclearabbit.com"
+"Betreff","Euer Portfolio online – so wie es verdient"
+"E-Mail Text","Hey Nuclearabbit Tattoo Studio-Team,
 
 euer Studio in Berlin ist mir aufgefallen – wirklich beeindruckendes Portfolio!
 
@@ -855,7 +1330,14 @@ Bock auf einen kurzen 15-Minuten-Call? Schreibt mir einfach!
 
 Grüße aus Berlin,
 [DEIN NAME]"
-"Kiezliner Tattoo Studio","Tattoo Studio","kiezliner.tattoo@gmail.com","https://kiezliner-tattoo.de","Hey Kiezliner Tattoo Studio-Team,
+"",""
+"━━━ #69 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Kiezliner Tattoo Studio"
+"Kategorie","Tattoo Studio"
+"E-Mail","kiezliner.tattoo@gmail.com"
+"Website","https://kiezliner-tattoo.de"
+"Betreff","Euer Portfolio online – so wie es verdient"
+"E-Mail Text","Hey Kiezliner Tattoo Studio-Team,
 
 euer Studio in Berlin ist mir aufgefallen – wirklich beeindruckendes Portfolio!
 
@@ -869,7 +1351,14 @@ Bock auf einen kurzen 15-Minuten-Call? Schreibt mir einfach!
 
 Grüße aus Berlin,
 [DEIN NAME]"
-"Blut und Eisen Tattoo","Tattoo Studio","info@blutundeisen.de","https://blutundeisen.de","Hey Blut und Eisen Tattoo-Team,
+"",""
+"━━━ #70 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Blut und Eisen Tattoo"
+"Kategorie","Tattoo Studio"
+"E-Mail","info@blutundeisen.de"
+"Website","https://blutundeisen.de"
+"Betreff","Euer Portfolio online – so wie es verdient"
+"E-Mail Text","Hey Blut und Eisen Tattoo-Team,
 
 euer Studio in Berlin ist mir aufgefallen – wirklich beeindruckendes Portfolio!
 
@@ -883,7 +1372,14 @@ Bock auf einen kurzen 15-Minuten-Call? Schreibt mir einfach!
 
 Grüße aus Berlin,
 [DEIN NAME]"
-"Selfmade Tattoo Berlin","Tattoo Studio","info@selfmade-tattoo.de","https://www.selfmade-tattoo.de","Hey Selfmade Tattoo Berlin-Team,
+"",""
+"━━━ #71 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Selfmade Tattoo Berlin"
+"Kategorie","Tattoo Studio"
+"E-Mail","info@selfmade-tattoo.de"
+"Website","https://www.selfmade-tattoo.de"
+"Betreff","Euer Portfolio online – so wie es verdient"
+"E-Mail Text","Hey Selfmade Tattoo Berlin-Team,
 
 euer Studio in Berlin ist mir aufgefallen – wirklich beeindruckendes Portfolio!
 
@@ -897,7 +1393,14 @@ Bock auf einen kurzen 15-Minuten-Call? Schreibt mir einfach!
 
 Grüße aus Berlin,
 [DEIN NAME]"
-"Mugshot Tattoo","Tattoo Studio","hello@mugshot-tattoo.com","https://mugshot-tattoo.com","Hallo Mugshot Tattoo-Team,
+"",""
+"━━━ #72 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Mugshot Tattoo"
+"Kategorie","Tattoo Studio"
+"E-Mail","hello@mugshot-tattoo.com"
+"Website","https://mugshot-tattoo.com"
+"Betreff","Kurze Idee für eure Tattoo-Website – Mugshot Tattoo"
+"E-Mail Text","Hallo Mugshot Tattoo-Team,
 
 als Webdesigner aus Berlin schaue ich mir regelmäßig Tattoo-Studio-Websites an – dabei bin ich auf euch gestoßen.
 
@@ -909,7 +1412,14 @@ Kurzes 15-Minuten-Gespräch? Einfach antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"CNX Tattoo & Piercing","Tattoo Studio","cnxtattoo@gmail.com","https://www.cnxtattoo.com","Hallo CNX Tattoo & Piercing-Team,
+"",""
+"━━━ #73 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","CNX Tattoo & Piercing"
+"Kategorie","Tattoo Studio"
+"E-Mail","cnxtattoo@gmail.com"
+"Website","https://www.cnxtattoo.com"
+"Betreff","Kurze Idee für eure Tattoo-Website – CNX Tattoo & Piercing"
+"E-Mail Text","Hallo CNX Tattoo & Piercing-Team,
 
 als Webdesigner aus Berlin schaue ich mir regelmäßig Tattoo-Studio-Websites an – dabei bin ich auf euch gestoßen.
 
@@ -921,7 +1431,14 @@ Kurzes 15-Minuten-Gespräch? Einfach antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Tattoo Devil Berlin","Tattoo Studio","mail@tattoo-devil.de","https://www.tattoo-devil.de","Hallo Tattoo Devil Berlin-Team,
+"",""
+"━━━ #74 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Tattoo Devil Berlin"
+"Kategorie","Tattoo Studio"
+"E-Mail","mail@tattoo-devil.de"
+"Website","https://www.tattoo-devil.de"
+"Betreff","Kurze Idee für eure Tattoo-Website – Tattoo Devil Berlin"
+"E-Mail Text","Hallo Tattoo Devil Berlin-Team,
 
 als Webdesigner aus Berlin schaue ich mir regelmäßig Tattoo-Studio-Websites an – dabei bin ich auf euch gestoßen.
 
@@ -933,7 +1450,14 @@ Kurzes 15-Minuten-Gespräch? Einfach antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Tiba Tattoo Studio","Tattoo Studio","info@tibatattoo.de","https://www.tibatattoo.com","Hallo Tiba Tattoo Studio-Team,
+"",""
+"━━━ #75 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Tiba Tattoo Studio"
+"Kategorie","Tattoo Studio"
+"E-Mail","info@tibatattoo.de"
+"Website","https://www.tibatattoo.com"
+"Betreff","Kurze Idee für eure Tattoo-Website – Tiba Tattoo Studio"
+"E-Mail Text","Hallo Tiba Tattoo Studio-Team,
 
 als Webdesigner aus Berlin schaue ich mir regelmäßig Tattoo-Studio-Websites an – dabei bin ich auf euch gestoßen.
 
@@ -945,7 +1469,14 @@ Kurzes 15-Minuten-Gespräch? Einfach antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"LeseGlück","Buchhandlung","email@leseglueck-berlin.de","https://www.leseglueck-berlin.de","Hallo LeseGlück-Team,
+"",""
+"━━━ #76 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","LeseGlück"
+"Kategorie","Buchhandlung"
+"E-Mail","email@leseglueck-berlin.de"
+"Website","https://www.leseglueck-berlin.de"
+"Betreff","Eure Buchhandlung online besser sichtbar machen"
+"E-Mail Text","Hallo LeseGlück-Team,
 
 Euer Buchladen in Berlin ist eine echte Bereicherung – solche unabhängigen Buchhandlungen braucht die Stadt!
 
@@ -959,7 +1490,14 @@ Kurzes 15-Minuten-Gespräch? Einfach antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"buch|bund","Buchhandlung","info@buchbund.de","https://buchbund.de","Hallo buch|bund-Team,
+"",""
+"━━━ #77 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","buch|bund"
+"Kategorie","Buchhandlung"
+"E-Mail","info@buchbund.de"
+"Website","https://buchbund.de"
+"Betreff","Eure Buchhandlung online besser sichtbar machen"
+"E-Mail Text","Hallo buch|bund-Team,
 
 Euer Buchladen in Berlin ist eine echte Bereicherung – solche unabhängigen Buchhandlungen braucht die Stadt!
 
@@ -973,7 +1511,14 @@ Kurzes 15-Minuten-Gespräch? Einfach antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Die Buchkönigin","Buchhandlung","hallo@buchkoenigin.de","https://www.buchkoenigin.de","Hallo Die Buchkönigin-Team,
+"",""
+"━━━ #78 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Die Buchkönigin"
+"Kategorie","Buchhandlung"
+"E-Mail","hallo@buchkoenigin.de"
+"Website","https://www.buchkoenigin.de"
+"Betreff","Eure Buchhandlung online besser sichtbar machen"
+"E-Mail Text","Hallo Die Buchkönigin-Team,
 
 Euer Buchladen in Berlin ist eine echte Bereicherung – solche unabhängigen Buchhandlungen braucht die Stadt!
 
@@ -987,7 +1532,14 @@ Kurzes 15-Minuten-Gespräch? Einfach antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Spielzeugladen an der Kaisereiche","Spielzeugladen","sadk-berlin@gmx.de","https://www.sadk-berlin.de","Hallo Spielzeugladen an der Kaisereiche-Team,
+"",""
+"━━━ #79 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Spielzeugladen an der Kaisereiche"
+"Kategorie","Spielzeugladen"
+"E-Mail","sadk-berlin@gmx.de"
+"Website","https://www.sadk-berlin.de"
+"Betreff","Mehr Berliner Familien finden euren Laden"
+"E-Mail Text","Hallo Spielzeugladen an der Kaisereiche-Team,
 
 Euer Spielzeugladen in Berlin ist mir aufgefallen – ein echter Schatz für Berliner Familien!
 
@@ -1001,7 +1553,14 @@ Kurzes 15-Minuten-Gespräch? Einfach auf diese E-Mail antworten!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Blumenbett","Florist","info@blumenbett.de","https://www.blumenbett.de","Hallo Blumenbett-Team,
+"",""
+"━━━ #80 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Blumenbett"
+"Kategorie","Florist"
+"E-Mail","info@blumenbett.de"
+"Website","https://www.blumenbett.de"
+"Betreff","Euer Blumengeschäft mit einer schöneren Website"
+"E-Mail Text","Hallo Blumenbett-Team,
 
 Euer Blumengeschäft in Berlin ist mir aufgefallen – wirklich schöne Arbeit!
 
@@ -1015,7 +1574,14 @@ Kurzes 15-Minuten-Gespräch gefällig? Schreibt mir einfach!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Frau Rose Floristik","Florist","info@fraurose.de","https://www.fraurose.de","Hallo Frau Rose Floristik-Team,
+"",""
+"━━━ #81 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Frau Rose Floristik"
+"Kategorie","Florist"
+"E-Mail","info@fraurose.de"
+"Website","https://www.fraurose.de"
+"Betreff","Euer Blumengeschäft mit einer schöneren Website"
+"E-Mail Text","Hallo Frau Rose Floristik-Team,
 
 Euer Blumengeschäft in Berlin ist mir aufgefallen – wirklich schöne Arbeit!
 
@@ -1029,7 +1595,14 @@ Kurzes 15-Minuten-Gespräch gefällig? Schreibt mir einfach!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
-"Kornblume Floristik","Florist","info@lindes-kornblume.de","https://www.lindes-kornblume.de","Hallo Kornblume Floristik-Team,
+"",""
+"━━━ #82 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",""
+"Business Name","Kornblume Floristik"
+"Kategorie","Florist"
+"E-Mail","info@lindes-kornblume.de"
+"Website","https://www.lindes-kornblume.de"
+"Betreff","Euer Blumengeschäft mit einer schöneren Website"
+"E-Mail Text","Hallo Kornblume Floristik-Team,
 
 Euer Blumengeschäft in Berlin ist mir aufgefallen – wirklich schöne Arbeit!
 
@@ -1043,3 +1616,4 @@ Kurzes 15-Minuten-Gespräch gefällig? Schreibt mir einfach!
 
 Herzliche Grüße aus Berlin,
 [DEIN NAME]"
+"",""
